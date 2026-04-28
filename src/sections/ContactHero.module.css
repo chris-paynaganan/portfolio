@@ -1,43 +1,83 @@
 .section {
   padding: var(--space-20) 0;
-  background-color: #f9f9f9;
-}
-
-.inner {
-  max-width: 720px;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-6);
-}
-
-.label {
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 
 .title {
   font-size: var(--text-5xl);
   font-weight: 700;
-  line-height: 1.15;
   color: var(--color-text);
-}
-
-.title em {
-  font-style: italic;
-  color: var(--color-accent);
+  line-height: 1.1;
+  margin-bottom: var(--space-4);
 }
 
 .subtitle {
   font-size: var(--text-lg);
   color: var(--color-text-muted);
-  line-height: 1.8;
+  line-height: 1.7;
+  max-width: 600px;
+  margin-bottom: var(--space-12);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+  background-color: var(--color-background);
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.icon {
+  font-size: var(--text-2xl);
+  color: var(--color-text);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--color-text);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cardTitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.cardDescription {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
 }
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1199px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
   .title {
     font-size: var(--text-4xl);
   }
@@ -45,6 +85,10 @@
 
 /* Mobile */
 @media (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
   .title {
     font-size: var(--text-3xl);
   }

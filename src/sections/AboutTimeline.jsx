@@ -1,24 +1,20 @@
-import SectionHeader from '../components/SectionHeader'
 import styles from './AboutTimeline.module.css'
 
 const timeline = [
   {
-    year: '2024 — Present',
-    role: 'Freelance Designer & Developer',
-    company: 'Self-employed',
-    description: 'Working with clients across various industries to design and build purposeful digital experiences.',
+    role: 'Freelance Product Designer',
+    company: 'Fourge Studio',
+    description: 'Independent product design lead owning concept development, wireframes, user flow planning, and UI systems for multiple client projects.',
   },
   {
-    year: '2022 — 2024',
-    role: 'UI/UX Designer',
-    company: 'Company Name',
-    description: 'Designed user interfaces and experiences for web and mobile applications.',
+    role: 'UI UX Designer',
+    company: 'True Blue Solutions PH',
+    description: 'Designed user interfaces and experiences for web and mobile applications across healthcare and staffing platforms.',
   },
   {
-    year: '2020 — 2022',
-    role: 'Junior Web Developer',
-    company: 'Company Name',
-    description: 'Built and maintained websites and web applications for various clients.',
+    role: 'Customer Support',
+    company: 'Asia Premier One Source, Inc.',
+    description: 'Answered calls and monitored test takers online ensuring 100% protocol compliance across 500+ online exams.',
   },
 ]
 
@@ -26,15 +22,17 @@ function AboutTimeline() {
   return (
     <section className={styles.section}>
       <div className="container">
-        <SectionHeader
-          label="Experience"
-          title="My journey so far"
-          subtitle="A timeline of my professional experience and growth."
-        />
+        <h2 className={styles.title}>My Journey so far</h2>
+        <p className={styles.subtitle}>
+          This is a look at how my career has unfolded so far, from where I started to where I am 
+          now. Each step, role, and challenge played a part in shaping how I think, work, and grow. 
+          It's not just about what I've done, but how those experiences built on each other over 
+          time and led me to where I am today.
+        </p>
         <div className={styles.timeline}>
           {timeline.map((item, index) => (
             <div key={index} className={styles.item}>
-              <div className={styles.year}>{item.year}</div>
+              <div className={styles.dot} />
               <div className={styles.content}>
                 <h3 className={styles.role}>{item.role}</h3>
                 <p className={styles.company}>{item.company}</p>

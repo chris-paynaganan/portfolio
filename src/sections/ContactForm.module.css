@@ -4,7 +4,7 @@
 
 .inner {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1.6fr;
   gap: var(--space-16);
   align-items: start;
 }
@@ -17,69 +17,51 @@
 }
 
 .infoTitle {
-  font-size: var(--text-2xl);
+  font-size: var(--text-4xl);
   font-weight: 700;
   color: var(--color-text);
+  line-height: 1.2;
 }
 
-.infoText {
+.infoSubtitle {
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: 1.7;
 }
 
-.details {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
 }
 
-.detail {
+.infoItem {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
 }
 
-.detailLabel {
+.infoLabel {
   font-size: var(--text-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
   color: var(--color-text-muted);
 }
 
-.detailValue {
+.infoValue {
   font-size: var(--text-base);
-  color: var(--color-text);
-  font-weight: 500;
-}
-
-.available {
-  color: #22c55e;
-}
-
-.socials {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
-}
-
-.social {
-  font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--color-accent);
-  transition: opacity var(--transition-fast);
+  color: var(--color-text);
+  text-decoration: none;
 }
 
-.social:hover {
-  opacity: 0.7;
+.infoValue:hover {
+  text-decoration: underline;
 }
 
-/* Form Side */
-.formWrapper {
-  background-color: #f9f9f9;
+/* Form Card */
+.formCard {
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-10);
+  padding: var(--space-8);
 }
 
 .form {
@@ -107,41 +89,79 @@
 }
 
 .input,
-.select,
 .textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: #f5f5f5;
+  outline: none;
+  transition: background-color var(--transition-fast);
+}
+
+.input:focus,
+.textarea:focus {
+  background-color: #eeeeee;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #aaaaaa;
+}
+
+.textarea {
+  resize: none;
+  min-height: 140px;
+}
+
+/* Select */
+.selectWrapper {
+  position: relative;
+}
+
+.select {
   width: 100%;
   padding: var(--space-3) var(--space-4);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  font-size: var(--text-base);
+  font-size: var(--text-sm);
   font-family: inherit;
   color: var(--color-text);
   background-color: var(--color-background);
-  transition: border-color var(--transition-fast);
   outline: none;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
 }
 
-.input:focus,
-.select:focus,
-.textarea:focus {
-  border-color: var(--color-accent);
+.select:focus {
+  border-color: var(--color-text);
 }
 
-.textarea {
-  resize: vertical;
-  min-height: 150px;
+.selectArrow {
+  position: absolute;
+  right: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  pointer-events: none;
 }
 
+/* Submit */
 .submit {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: var(--space-4) var(--space-10);
-  background-color: var(--color-accent);
+  gap: var(--space-3);
+  background-color: #1a1a1a;
   color: #ffffff;
   border: none;
   border-radius: var(--radius-full);
-  font-size: var(--text-base);
+  padding: var(--space-3) var(--space-8);
+  font-size: var(--text-sm);
   font-weight: 600;
   font-family: inherit;
   cursor: pointer;
@@ -153,7 +173,11 @@
   opacity: 0.85;
 }
 
-/* Success State */
+.submitIcon {
+  font-size: var(--text-base);
+}
+
+/* Success */
 .success {
   display: flex;
   flex-direction: column;
@@ -165,7 +189,6 @@
 .success h3 {
   font-size: var(--text-2xl);
   font-weight: 700;
-  color: var(--color-text);
 }
 
 .success p {
@@ -192,8 +215,8 @@
     gap: var(--space-10);
   }
 
-  .row {
-    grid-template-columns: 1fr 1fr;
+  .infoGrid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -204,11 +227,19 @@
     gap: var(--space-10);
   }
 
-  .formWrapper {
+  .infoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .formCard {
     padding: var(--space-6);
   }
 
   .row {
     grid-template-columns: 1fr;
+  }
+
+  .infoTitle {
+    font-size: var(--text-3xl);
   }
 }
