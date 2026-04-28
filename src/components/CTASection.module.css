@@ -1,37 +1,130 @@
 .section {
-  background-color: var(--color-text);
   padding: var(--space-20) 0;
   margin-top: var(--space-20);
 }
 
-.inner {
+.card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: var(--space-10);
+  background-color: #ffffff;
+  border: 1px solid var(--color-border, #e5e5e5);
+  border-radius: 24px;
+  padding: var(--space-14) var(--space-16);
+  overflow: hidden;
+  position: relative;
+}
+
+.content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
   gap: var(--space-6);
 }
 
 .title {
   font-size: var(--text-4xl);
   font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
+  color: var(--color-text);
+  line-height: 1.15;
+  margin: 0;
 }
 
 .subtitle {
-  font-size: var(--text-lg);
-  color: #aaaaaa;
+  font-size: var(--text-base);
+  color: var(--color-text-muted, #888888);
+  line-height: 1.65;
   max-width: 480px;
+  margin: 0;
 }
 
-/* Mobile */
-@media (max-width: 767px) {
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: var(--color-text);
+  color: #ffffff;
+  font-size: var(--text-base);
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  transition: opacity 0.2s ease;
+  margin-top: var(--space-2);
+}
+
+.button:hover {
+  opacity: 0.85;
+}
+
+.buttonIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.imageWrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 260px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .card {
+    padding: var(--space-16) var(--space-20);
+  }
+}
+
+/* Tablet */
+@media (max-width: 1199px) {
+  .card {
+    padding: var(--space-12) var(--space-12);
+    gap: var(--space-8);
+  }
+
   .title {
     font-size: var(--text-3xl);
   }
 
+  .image {
+    width: 200px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .card {
+    grid-template-columns: 1fr;
+    padding: var(--space-10) var(--space-8);
+    gap: 0;
+  }
+
+  .imageWrap {
+    display: none;
+  }
+
+  .title {
+    font-size: var(--text-2xl);
+  }
+
   .subtitle {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
+  }
+
+  .button {
+    font-size: var(--text-sm);
+    padding: 12px 20px;
   }
 }
