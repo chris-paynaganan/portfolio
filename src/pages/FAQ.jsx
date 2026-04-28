@@ -1,13 +1,19 @@
 import { useState } from 'react'
-import styles from './FAQ.module.css'
 import { faqs } from '../data/faqs'
 import CTASection from '../components/CTASection'
+import styles from './FAQ.module.css'
 
 function FAQ() {
+  const [view, setView] = useState('list')
   const [openIndex, setOpenIndex] = useState(null)
+  const [flipped, setFlipped] = useState(null)
 
-  const toggle = (index) => {
+  const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index)
+  }
+
+  const handleFlip = (id) => {
+    setFlipped(flipped === id ? null : id)
   }
 
   return (
@@ -23,25 +29,75 @@ function FAQ() {
       </section>
 
       <section className={styles.section}>
-        <div className={`container ${styles.inner}`}>
-          {faqs.map((faq, index) => (
-            <div key={faq.id} className={styles.item}>
-              <button
-                className={styles.question}
-                onClick={() => toggle(index)}
-              >
-                {faq.question}
-                <span className={styles.icon}>
-                  {openIndex === index ? '−' : '+'}
-                </span>
-              </button>
-              {openIndex === index && (
-                <div className={styles.answer}>
-                  <p>{faq.answer}</p>
+        <div className="container">
+
+          {/* View Toggle */}
+          <div className={styles.toggle}>
+            <button
+              className={`${styles.toggleBtn} ${view === 'list' ? styles.toggleActive : ''}`}
+              onClick={() => setView('list')}
+            >
+              <span className={styles.toggleIcon}>≡</span>
+              List
+            </button>
+            <button
+              className={`${styles.toggleBtn} ${view === 'grid' ? styles.toggleActive : ''}`}
+              onClick={() => setView('grid')}
+            >
+              <span className={styles.toggleIcon}>⊞</span>
+              Grid
+            </button>
+          </div>
+
+          {/* List — Accordion */}
+          {view === 'list' && (
+            <div className={styles.accordion}>
+              {faqs.map((faq, index) => (
+                <div key={faq.id} className={styles.accordionItem}>
+                  <button
+                    className={styles.accordionQuestion}
+                    onClick={() => toggleAccordion(index)}
+                  >
+                    <span>{faq.question}</span>
+                    <span className={`${styles.accordionIcon} ${openIndex === index ? styles.accordionIconOpen : ''}`}>
+                      +
+                    </span>
+                  </button>
+                  <div className={`${styles.accordionAnswer} ${openIndex === index ? styles.accordionAnswerOpen : ''}`}>
+                    <p>{faq.answer}</p>
+                  </div>
                 </div>
-              )}
+              ))}
             </div>
-          ))}
+          )}
+
+          {/* Grid — Flip Cards */}
+          {view === 'grid' && (
+            <div className={styles.grid}>
+              {faqs.map((faq) => (
+                <div
+                  key={faq.id}
+                  className={`${styles.cardWrapper} ${flipped === faq.id ? styles.flipped : ''}`}
+                  onClick={() => handleFlip(faq.id)}
+                >
+                  <div className={styles.card}>
+                    <div className={styles.cardFront}>
+                      <span className={styles.cardNumber}>
+                        {String(faq.id).padStart(2, '0')}
+                      </span>
+                      <p className={styles.question}>{faq.question}</p>
+                      <span className={styles.hint}>Click to reveal</span>
+                    </div>
+                    <div className={styles.cardBack}>
+                      <p className={styles.answer}>{faq.answer}</p>
+                      <span className={styles.hint}>Click to close</span>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
         </div>
       </section>
 
