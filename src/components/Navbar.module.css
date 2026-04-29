@@ -9,6 +9,11 @@
   justify-content: center;
   padding: 16px 24px;
   pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+.wrapperHidden {
+  transform: translateY(-120%);
 }
 
 /* The floating pill */
@@ -18,7 +23,6 @@
   max-width: 1200px;
   border-radius: 35px;
   padding: 10px 14px;
-  transition: all 0.4s ease;
 
   /* Liquid Glass Effect */
   background: linear-gradient(
@@ -290,7 +294,6 @@
   opacity: 0.85;
 }
 
-/* Also need page padding since navbar is now fixed */
 /* Desktop — show nav links, hide hamburger */
 @media (min-width: 1024px) {
   .desktopLinks {
@@ -343,4 +346,3 @@
     font-size: 14px;
   }
 }
-

@@ -19,17 +19,19 @@ const utilityLinks = [
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [hidden, setHidden] = useState(false)
+  const [retracted, setRetracted] = useState(false) // logo only pill
+  const [hidden, setHidden] = useState(false)       // fully off screen
   const lastScrollY = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
+      // Retract to logo-only pill on scroll down, expand on scroll up
       if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
-        setHidden(true)
-      } else {
-        setHidden(false)
+        setRetracted(true)
+      } else if (currentScrollY < lastScrollY.current) {
+        setRetracted(false)
       }
 
       setScrolled(currentScrollY > 20)
@@ -37,6 +39,27 @@ function Navbar() {
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
+
+    // Only hide navbar when footer is actually on screen
+    const footer = document.querySelector('footer')
+    if (footer) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setHidden(true)
+          } else {
+            setHidden(false)
+          }
+        },
+        { threshold: 0.1 }
+      )
+      observer.observe(footer)
+      return () => {
+        window.removeEventListener('scroll', handleScroll)
+        observer.disconnect()
+      }
+    }
+
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -44,8 +67,13 @@ function Navbar() {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-    <header className={styles.wrapper}>
-      <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''} ${menuOpen ? styles.expanded : ''} ${hidden ? styles.retracted : ''}`}>
+    <header className={`${styles.wrapper} ${hidden ? styles.wrapperHidden : ''}`}>
+      <nav className={`
+        ${styles.navbar}
+        ${scrolled ? styles.scrolled : ''}
+        ${menuOpen ? styles.expanded : ''}
+        ${retracted && !menuOpen ? styles.retracted : ''}
+      `}>
 
         {/* Top Bar */}
         <div className={styles.topBar}>
@@ -59,7 +87,7 @@ function Navbar() {
           </NavLink>
 
           {/* Center — Desktop Nav Links */}
-          <div className={`${styles.desktopLinks} ${hidden ? styles.hideLinks : ''}`}>
+          <div className={`${styles.desktopLinks} ${retracted && !menuOpen ? styles.hideLinks : ''}`}>
             {mainLinks.map((link, index) => (
               <div key={link.path} className={styles.linkWrapper}>
                 {index !== 0 && <span className={styles.divider}>|</span>}
@@ -76,7 +104,7 @@ function Navbar() {
           </div>
 
           {/* Right — CTA + Hamburger */}
-          <div className={`${styles.right} ${hidden ? styles.hideLinks : ''}`}>
+          <div className={`${styles.right} ${retracted && !menuOpen ? styles.hideLinks : ''}`}>
             <NavLink to="/contact" className={styles.ctaButton} onClick={closeMenu}>
               <span className={styles.ctaIcon}>↻</span>
               Chat with me
