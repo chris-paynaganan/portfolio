@@ -16,39 +16,87 @@
   transform: translateY(-120%);
 }
 
-/* The floating pill */
+/* The floating pill — enhanced liquid glass */
 .navbar {
   pointer-events: all;
   width: 100%;
   max-width: 1200px;
   border-radius: 35px;
   padding: 10px 14px;
+  position: relative;
+  overflow: hidden;
 
-  /* Liquid Glass Effect */
+  /* Frosted glass base */
   background: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.72) 0%,
-    rgba(235, 235, 240, 0.60) 50%,
-    rgba(255, 255, 255, 0.55) 100%
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(240, 240, 248, 0.65) 40%,
+    rgba(255, 255, 255, 0.58) 70%,
+    rgba(245, 245, 255, 0.70) 100%
   );
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(28px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
+
+  /* Heavy frost + chromatic dispersion */
+  backdrop-filter: blur(40px) saturate(200%) brightness(1.08) contrast(1.04);
+  -webkit-backdrop-filter: blur(40px) saturate(200%) brightness(1.08) contrast(1.04);
+
+  /* Refraction border — simulates light bending at the edge */
+  border: 1px solid rgba(255, 255, 255, 0.90);
+  outline: 0.5px solid rgba(180, 180, 220, 0.25);
+
+  /* Layered shadows for depth + dispersion glow */
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.04) inset,
+    /* Top specular highlight */
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    /* Bottom inner shadow for thickness */
+    0 -1px 0 rgba(0, 0, 0, 0.05) inset,
+    /* Left chromatic fringe — subtle blue */
+    -1px 0 0 rgba(180, 200, 255, 0.18) inset,
+    /* Right chromatic fringe — subtle warm */
+    1px 0 0 rgba(255, 220, 180, 0.12) inset,
+    /* Main drop shadow */
     0 8px 32px rgba(0, 0, 0, 0.10),
-    0 2px 8px rgba(0, 0, 0, 0.06);
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    /* Subtle color dispersion glow underneath */
+    0 4px 24px rgba(160, 180, 255, 0.08);
 
   transition: all 0.5s cubic-bezier(0.32, 0.72, 0, 1);
 }
 
+/* Prismatic sheen overlay — simulates refraction */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    118deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(200, 215, 255, 0.12) 25%,
+    transparent 45%,
+    rgba(255, 235, 200, 0.08) 70%,
+    rgba(255, 255, 255, 0.20) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* All children above the sheen */
+.navbar > * {
+  position: relative;
+  z-index: 1;
+}
+
 .scrolled {
+  backdrop-filter: blur(48px) saturate(220%) brightness(1.10) contrast(1.05);
+  -webkit-backdrop-filter: blur(48px) saturate(220%) brightness(1.10) contrast(1.05);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.9) inset,
-    0 -1px 0 rgba(0, 0, 0, 0.04) inset,
+    0 1px 0 rgba(255, 255, 255, 0.95) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.05) inset,
+    -1px 0 0 rgba(180, 200, 255, 0.18) inset,
+    1px 0 0 rgba(255, 220, 180, 0.12) inset,
     0 16px 48px rgba(0, 0, 0, 0.14),
-    0 4px 12px rgba(0, 0, 0, 0.08);
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 4px 24px rgba(160, 180, 255, 0.10);
 }
 
 .expanded {
@@ -207,7 +255,6 @@
   transform-origin: center;
 }
 
-/* Hamburger → X animation */
 .bar1Open {
   transform: translateY(3.5px) rotate(45deg);
 }
@@ -294,7 +341,7 @@
   opacity: 0.85;
 }
 
-/* Desktop — show nav links, hide hamburger */
+/* Desktop */
 @media (min-width: 1024px) {
   .desktopLinks {
     display: flex;
