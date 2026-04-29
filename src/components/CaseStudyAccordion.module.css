@@ -1,0 +1,227 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* Left accordion */
+.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemTitle {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text-muted, #aaaaaa);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  padding: var(--space-4) 0;
+  font-family: inherit;
+  transition: color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.itemTitleActive {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+.itemTitle:hover {
+  color: var(--color-text);
+}
+
+/* Inline content — mobile only */
+.inlineContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    padding-bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding-bottom: 0;
+}
+
+.inlineContentOpen {
+  max-height: 1000px;
+  opacity: 1;
+  transform: translateY(0);
+  padding-bottom: var(--space-4);
+}
+
+.inlineSummary {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.inlineDetail {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted, #888888);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.mobileImage {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  display: none;
+}
+
+.mobileImagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e5e5e5;
+  border-radius: 12px;
+  display: none;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--color-border, #e5e5e5);
+  flex-shrink: 0;
+}
+
+/* Right panel */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  position: sticky;
+  top: 120px;
+}
+
+.imageWrap {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+  animation: fadeUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #e5e5e5;
+  border-radius: 16px;
+  animation: fadeUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.detail {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  animation: fadeUp 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.detailSummary {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.detailText {
+  font-size: var(--text-base);
+  color: var(--color-text-muted, #888888);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Quick links */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color-border, #e5e5e5);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.link:hover {
+  border-color: var(--color-text);
+  background-color: var(--color-text);
+  color: #ffffff;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .wrap {
+    grid-template-columns: 1fr 1.4fr;
+    gap: var(--space-8);
+  }
+
+  .itemTitle {
+    font-size: var(--text-lg);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    display: none;
+  }
+
+  .inlineContent {
+    display: flex;
+  }
+
+  .mobileImage,
+  .mobileImagePlaceholder {
+    display: block;
+  }
+
+  .itemTitle {
+    font-size: var(--text-base);
+  }
+}

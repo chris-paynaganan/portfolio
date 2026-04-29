@@ -1,6 +1,7 @@
 import { useParams, NavLink } from 'react-router-dom'
 import { projects } from '../data/projects'
 import TabPanel from '../components/TabPanel'
+import CaseStudyAccordion from '../components/CaseStudyAccordion'
 import TestimonialCard from '../components/TestimonialCard'
 import ProjectCard from '../components/ProjectCard'
 import CTASection from '../components/CTASection'
@@ -10,7 +11,6 @@ function ProjectDetail() {
   const { id } = useParams()
   const project = projects.find((p) => p.id === id)
 
-  // If project not found, show 404-like message
   if (!project) {
     return (
       <div className={styles.notFound}>
@@ -21,11 +21,11 @@ function ProjectDetail() {
   }
 
   const tabs = [
-    { label: 'Overview', content: <p>{project.tabs.overview}</p> },
-    { label: 'Context', content: <p>{project.tabs.context}</p> },
-    { label: 'Challenge', content: <p>{project.tabs.challenge}</p> },
-    { label: 'Approach', content: <p>{project.tabs.approach}</p> },
-    { label: 'Outcome', content: <p>{project.tabs.outcome}</p> },
+    { label: 'Overview',   content: <p>{project.tabs.overview}</p> },
+    { label: 'Context',    content: <p>{project.tabs.context}</p> },
+    { label: 'Challenge',  content: <p>{project.tabs.challenge}</p> },
+    { label: 'Approach',   content: <p>{project.tabs.approach}</p> },
+    { label: 'Outcome',    content: <p>{project.tabs.outcome}</p> },
     { label: 'Reflection', content: <p>{project.tabs.reflection}</p> },
   ]
 
@@ -78,12 +78,27 @@ function ProjectDetail() {
         </div>
       </section>
 
-      {/* 6 Tabs */}
+      {/* Quick Summary Tabs */}
       <section className={styles.tabs}>
         <div className="container">
           <TabPanel tabs={tabs} />
         </div>
       </section>
+
+      {/* Case Study Deep Dive — accordion */}
+      {project.caseStudy && project.caseStudy.length > 0 && (
+        <section className={styles.caseStudy}>
+          <div className="container">
+            <div className={styles.caseStudyHeader}>
+              <h2 className={styles.caseStudyTitle}>Deep dive</h2>
+              <p className={styles.caseStudySub}>
+                A closer look at the thinking, decisions, and details behind the work.
+              </p>
+            </div>
+            <CaseStudyAccordion sections={project.caseStudy} />
+          </div>
+        </section>
+      )}
 
       {/* Testimonial */}
       {project.testimonial && (

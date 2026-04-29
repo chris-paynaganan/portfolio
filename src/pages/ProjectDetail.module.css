@@ -165,6 +165,31 @@
   gap: var(--space-6);
 }
 
+/* Case Study Deep Dive */
+.caseStudy {
+  padding: var(--space-20) 0;
+  background-color: #f9f9f9;
+}
+ 
+.caseStudyHeader {
+  margin-bottom: var(--space-12);
+}
+ 
+.caseStudyTitle {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.15;
+  margin: 0 0 var(--space-3);
+}
+ 
+.caseStudySub {
+  font-size: var(--text-base);
+  color: var(--color-text-muted, #888888);
+  line-height: 1.7;
+  margin: 0;
+}
+
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1199px) {
   .title {
