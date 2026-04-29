@@ -1,16 +1,69 @@
 .section {
   padding: var(--space-20) 0;
-  background-color: #f9f9f9;
+  background-color: #ffffff;
 }
 
+/* Top row */
 .top {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: var(--space-6);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-10);
 }
 
+.title {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Outlined pill button */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 20px;
+  border-radius: var(--radius-full, 999px);
+  border: 1.5px solid var(--color-text);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  align-self: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--color-text);
+  color: #ffffff;
+}
+
+/* Two-column subtext */
+.subtext {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  margin-bottom: var(--space-10);
+}
+
+.subtext p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted, #888888);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Mobile button — hidden on desktop/tablet */
+.buttonMobile {
+  display: none;
+}
+
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -19,6 +72,15 @@
 
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1199px) {
+  .title {
+    font-size: var(--text-3xl);
+  }
+
+  .subtext {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -28,6 +90,27 @@
 @media (max-width: 767px) {
   .top {
     flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  /* Hide top button on mobile */
+  .top .button {
+    display: none;
+  }
+
+  .title {
+    font-size: var(--text-3xl);
+  }
+
+  .subtext {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  /* Show mobile button below subtext */
+  .buttonMobile {
+    display: inline-flex;
+    margin-bottom: var(--space-10);
   }
 
   .grid {
