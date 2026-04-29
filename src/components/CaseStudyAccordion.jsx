@@ -20,10 +20,9 @@ function CaseStudyAccordion({ sections = [] }) {
               {section.title}
             </button>
 
-            {/* Inline content — mobile only */}
+            {/* Inline content — desktop left + mobile */}
             <div className={`${styles.inlineContent} ${i === activeIndex ? styles.inlineContentOpen : ''}`}>
-              <p className={styles.inlineSummary}>{section.summary}</p>
-              <p className={styles.inlineDetail}>{section.detail}</p>
+              <p className={styles.inlineSummary}>{section.teaser}</p>
 
               {/* Mobile image */}
               {section.image ? (

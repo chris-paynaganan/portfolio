@@ -1,6 +1,7 @@
 import { useParams, NavLink } from 'react-router-dom'
 import { projects } from '../data/projects'
 import TabPanel from '../components/TabPanel'
+import OverviewTab from '../components/OverviewTab'
 import CaseStudyAccordion from '../components/CaseStudyAccordion'
 import TestimonialCard from '../components/TestimonialCard'
 import ProjectCard from '../components/ProjectCard'
@@ -15,13 +16,18 @@ function ProjectDetail() {
     return (
       <div className={styles.notFound}>
         <h1>Project not found</h1>
-        <NavLink to="/projects">← Back to Projects</NavLink>
+        <NavLink to="/projects">Back to Projects</NavLink>
       </div>
     )
   }
 
   const tabs = [
-    { label: 'Overview',   content: <p>{project.tabs.overview}</p> },
+    {
+      label: 'Overview',
+      content: typeof project.tabs.overview === 'object'
+        ? <OverviewTab text={project.tabs.overview.text} meta={project.tabs.overview.meta} />
+        : <p>{project.tabs.overview}</p>
+    },
     { label: 'Context',    content: <p>{project.tabs.context}</p> },
     { label: 'Challenge',  content: <p>{project.tabs.challenge}</p> },
     { label: 'Approach',   content: <p>{project.tabs.approach}</p> },
@@ -31,13 +37,16 @@ function ProjectDetail() {
 
   const moreProjects = projects.filter((p) => p.id !== project.id).slice(0, 3)
 
+  // Support both old string format and new object format for problem
+  const problem = typeof project.problem === 'object' ? project.problem : { text: project.problem, bullets: [], callout: '' }
+
   return (
     <>
       {/* Project Header */}
       <section className={styles.header}>
         <div className="container">
           <NavLink to="/projects" className={styles.back}>
-            ← Back to Projects
+            Back to Projects
           </NavLink>
           <div className={styles.tags}>
             {project.tags.map((tag) => (
@@ -62,19 +71,45 @@ function ProjectDetail() {
 
       {/* Problem / Solution / Outcome */}
       <section className={styles.pso}>
-        <div className={`container ${styles.psoGrid}`}>
+        <div className="container">
+
+          {/* Problem */}
           <div className={styles.psoItem}>
-            <h3 className={styles.psoLabel}>Problem</h3>
-            <p className={styles.psoText}>{project.problem}</p>
+            <h3 className={styles.psoLabel}>The Problem</h3>
+            <div className={styles.psoContent}>
+              {problem.text && <p className={styles.psoText}>{problem.text}</p>}
+              {problem.bullets && problem.bullets.length > 0 && (
+                <ul className={styles.psoBullets}>
+                  {problem.bullets.map((b, i) => (
+                    <li key={i} className={styles.psoBullet}>
+                      <span className={styles.psoBulletDot} />
+                      {b}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {problem.callout && (
+                <span className={styles.psoCallout}>{problem.callout}</span>
+              )}
+            </div>
           </div>
+
+          {/* Solution */}
           <div className={styles.psoItem}>
-            <h3 className={styles.psoLabel}>Solution</h3>
-            <p className={styles.psoText}>{project.solution}</p>
+            <h3 className={styles.psoLabel}>The Solution</h3>
+            <div className={styles.psoContent}>
+              <p className={styles.psoText}>{project.solution}</p>
+            </div>
           </div>
+
+          {/* Outcome */}
           <div className={styles.psoItem}>
-            <h3 className={styles.psoLabel}>Outcome</h3>
-            <p className={styles.psoText}>{project.outcome}</p>
+            <h3 className={styles.psoLabel}>The Outcome</h3>
+            <div className={styles.psoContent}>
+              <p className={styles.psoText}>{project.outcome}</p>
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -85,7 +120,7 @@ function ProjectDetail() {
         </div>
       </section>
 
-      {/* Case Study Deep Dive — accordion */}
+      {/* Case Study Deep Dive */}
       {project.caseStudy && project.caseStudy.length > 0 && (
         <section className={styles.caseStudy}>
           <div className="container">

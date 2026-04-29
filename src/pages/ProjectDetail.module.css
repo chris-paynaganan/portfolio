@@ -89,36 +89,82 @@
   object-fit: cover;
 }
 
-/* Problem / Solution / Outcome */
+/* Problem / Solution / Outcome — new two-column design */
 .pso {
-  padding: var(--space-16) 0;
+  padding: var(--space-20) 0;
   background-color: #f9f9f9;
 }
 
-.psoGrid {
+.psoItem {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-8);
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-16);
+  padding: var(--space-12) 0;
+  border-top: 1px solid var(--color-border, #e5e5e5);
 }
 
-.psoItem {
+.psoItem:last-child {
+  border-bottom: 1px solid var(--color-border, #e5e5e5);
+}
+
+.psoLabel {
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 700;
+  color: #cccccc;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.psoContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.psoText {
+  font-size: var(--text-base);
+  color: var(--color-text-muted, #555555);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.psoBullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
 }
 
-.psoLabel {
-  font-size: var(--text-xs);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-accent);
+.psoBullet {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-base);
+  color: var(--color-text-muted, #555555);
+  line-height: 1.6;
 }
 
-.psoText {
+.psoBulletDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-text, #111111);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.psoCallout {
+  display: block;
+  background-color: rgba(220, 100, 80, 0.08);
+  border-radius: 8px;
+  padding: var(--space-4) var(--space-5);
   font-size: var(--text-base);
-  color: var(--color-text-muted);
-  line-height: 1.7;
+  font-style: italic;
+  color: #c0392b;
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* Tabs */
@@ -170,11 +216,11 @@
   padding: var(--space-20) 0;
   background-color: #f9f9f9;
 }
- 
+
 .caseStudyHeader {
   margin-bottom: var(--space-12);
 }
- 
+
 .caseStudyTitle {
   font-size: clamp(28px, 4vw, 48px);
   font-weight: 700;
@@ -182,7 +228,7 @@
   line-height: 1.15;
   margin: 0 0 var(--space-3);
 }
- 
+
 .caseStudySub {
   font-size: var(--text-base);
   color: var(--color-text-muted, #888888);
@@ -196,9 +242,9 @@
     font-size: var(--text-4xl);
   }
 
-  .psoGrid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+  .psoItem {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--space-8);
   }
 
   .moreGrid {
@@ -216,8 +262,13 @@
     font-size: var(--text-base);
   }
 
-  .psoGrid {
+  .psoItem {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .psoLabel {
+    font-size: var(--text-3xl);
   }
 
   .moreGrid {
