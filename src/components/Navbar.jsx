@@ -16,18 +16,24 @@ const utilityLinks = [
   { label: 'Terms and Condition', path: '/terms' },
 ]
 
+const ChatIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+    <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"
+      stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+)
+
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [retracted, setRetracted] = useState(false) // logo only pill
-  const [hidden, setHidden] = useState(false)       // fully off screen
+  const [retracted, setRetracted] = useState(false)
+  const [hidden, setHidden] = useState(false)
   const lastScrollY = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      // Retract to logo-only pill on scroll down, expand on scroll up
       if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
         setRetracted(true)
       } else if (currentScrollY < lastScrollY.current) {
@@ -40,7 +46,6 @@ function Navbar() {
 
     window.addEventListener('scroll', handleScroll, { passive: true })
 
-    // Only hide navbar when footer is actually on screen
     const footer = document.querySelector('footer')
     if (footer) {
       const observer = new IntersectionObserver(
@@ -106,7 +111,7 @@ function Navbar() {
           {/* Right — CTA + Hamburger */}
           <div className={`${styles.right} ${retracted && !menuOpen ? styles.hideLinks : ''}`}>
             <NavLink to="/contact" className={styles.ctaButton} onClick={closeMenu}>
-              <span className={styles.ctaIcon}>↻</span>
+              <span className={styles.ctaIcon}><ChatIcon /></span>
               Chat with me
             </NavLink>
             <button
@@ -153,7 +158,7 @@ function Navbar() {
               </div>
             </div>
             <NavLink to="/contact" className={styles.menuCta} onClick={closeMenu}>
-              <span className={styles.ctaIcon}>↻</span>
+              <span className={styles.ctaIcon}><ChatIcon /></span>
               Chat with me
             </NavLink>
           </div>
