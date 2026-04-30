@@ -1,6 +1,6 @@
 import styles from './OverviewTab.module.css'
 
-function OverviewTab({ text, meta }) {
+function OverviewTab({ text, meta, callout }) {
   return (
     <div className={styles.wrap}>
       <h2 className={styles.title}>Project Overview</h2>
@@ -15,6 +15,10 @@ function OverviewTab({ text, meta }) {
             </div>
           ))}
         </div>
+      )}
+
+      {callout && (
+        <p className={styles.callout}>{callout}</p>
       )}
     </div>
   )

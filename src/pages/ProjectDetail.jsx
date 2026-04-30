@@ -30,7 +30,11 @@ function ProjectDetail() {
     {
       label: 'Overview',
       content: typeof project.tabs.overview === 'object'
-        ? <OverviewTab text={project.tabs.overview.text} meta={project.tabs.overview.meta} />
+        ? <OverviewTab
+            text={project.tabs.overview.text}
+            meta={project.tabs.overview.meta}
+            callout={project.tabs.overview.callout}
+          />
         : <p>{project.tabs.overview}</p>
     },
     {
