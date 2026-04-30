@@ -51,12 +51,14 @@ function ProjectDetail() {
         ? <ApproachTab items={project.tabs.approach} />
         : <p>{project.tabs.approach}</p>
     },
-    { label: 'Outcome',
+    {
+      label: 'Outcome',
       content: typeof project.tabs.outcome === 'object'
         ? <OutcomeTab results={project.tabs.outcome.results} />
         : <p>{project.tabs.outcome}</p>
     },
-    { label: 'Reflection',
+    {
+      label: 'Reflection',
       content: typeof project.tabs.reflection === 'object'
         ? <ReflectionTab sections={project.tabs.reflection.sections} callout={project.tabs.reflection.callout} />
         : <p>{project.tabs.reflection}</p>
@@ -64,8 +66,6 @@ function ProjectDetail() {
   ]
 
   const moreProjects = projects.filter((p) => p.id !== project.id).slice(0, 3)
-
-  // Support both old string format and new object format for problem
   const problem = typeof project.problem === 'object' ? project.problem : { text: project.problem, bullets: [], callout: '' }
 
   return (
@@ -167,7 +167,6 @@ function ProjectDetail() {
       {project.testimonial && (
         <section className={styles.testimonial}>
           <div className={styles.testimonialInner}>
-            <h2 className={styles.testimonialTitle}>What the client said</h2>
             <TestimonialCard testimonial={project.testimonial} />
           </div>
         </section>

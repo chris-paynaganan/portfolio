@@ -1,6 +1,6 @@
 import cishiftsDesktop from '../assets/images/cishifts desktop.png'
 import tbjDesktop from '../assets/images/tbj desktop.png'
-import bpDesktop from '../assets/images/bp desktop.png'
+import bpCover from '../assets/images/bp-cover.svg'
 
 export const projects = [
   {
@@ -171,7 +171,7 @@ export const projects = [
     title: 'Building a digital voice for a rising Filipina voice artist',
     shortDescription:
       'A pro-bono portfolio website created for Ms. Loveline Loverez, an emerging talent in the voice-over industry. The platform serves as a digital library showcasing her completed projects and features a 24/7 booking system, allowing clients to explore, listen, and instantly book her services with ease.',
-    thumbnail: bpDesktop,
+    thumbnail: bpCover,
     tags: ['Branding', 'Web Design'],
     problem: {
       text: 'Voiceover artists depend heavily on platforms like Fiverr and Voices.com for visibility. The tradeoff is control — over how their work is presented, how their brand is perceived, and how they\'re discovered. In a marketplace, every artist looks roughly the same. There\'s no room to tell a story, establish credibility, or own the relationship with a client.',
@@ -215,33 +215,33 @@ export const projects = [
         'Set up professional email integration for instant inquiry notifications',
       ],
       outcome: {
-  results: [
-    {
-      title: '120% increase in direct booking inquiries within first month',
-      description: 'Redesigned the site flow to remove friction, making demos and contact points immediately accessible. Focused on clear CTAs and faster load times, which drove more users to take action.',
-    },
-    {
-      title: 'Producers can now browse demos and submit inquiries 24/7',
-      description: 'Structured the site so key content like demos and contact forms are always available and easy to navigate, removing dependency on back-and-forth communication.',
-    },
-    {
-      title: 'Client perception shifted from \'freelancer\' to \'professional voice talent\'',
-      description: 'Elevated the visual design, branding, and layout consistency to reflect a more premium, industry-standard presence that builds trust instantly.',
-    },
-    {
-      title: 'Mobile traffic accounts for 70% of site visits',
-      description: 'Designed mobile-first, ensuring smooth navigation, fast loading, and optimized media playback, which made the experience strong for the majority of users.',
-    },
-    {
-      title: 'Demo completion rate: 82% (clients listen to full reels)',
-      description: 'Organized demos with better hierarchy and playback experience, reducing drop-off and encouraging users to stay engaged through the full audio.',
-    },
-    {
-      title: 'Average inquiry quality improved significantly (more project details provided upfront)',
-      description: 'Refined the inquiry form with better structure and prompts, guiding clients to provide clearer, more useful project information from the start.',
-    },
-  ],
-},
+        results: [
+          {
+            title: '120% increase in direct booking inquiries within first month',
+            description: 'Redesigned the site flow to remove friction, making demos and contact points immediately accessible. Focused on clear CTAs and faster load times, which drove more users to take action.',
+          },
+          {
+            title: 'Producers can now browse demos and submit inquiries 24/7',
+            description: 'Structured the site so key content like demos and contact forms are always available and easy to navigate, removing dependency on back-and-forth communication.',
+          },
+          {
+            title: 'Client perception shifted from \'freelancer\' to \'professional voice talent\'',
+            description: 'Elevated the visual design, branding, and layout consistency to reflect a more premium, industry-standard presence that builds trust instantly.',
+          },
+          {
+            title: 'Mobile traffic accounts for 70% of site visits',
+            description: 'Designed mobile-first, ensuring smooth navigation, fast loading, and optimized media playback, which made the experience strong for the majority of users.',
+          },
+          {
+            title: 'Demo completion rate: 82% (clients listen to full reels)',
+            description: 'Organized demos with better hierarchy and playback experience, reducing drop-off and encouraging users to stay engaged through the full audio.',
+          },
+          {
+            title: 'Average inquiry quality improved significantly (more project details provided upfront)',
+            description: 'Refined the inquiry form with better structure and prompts, guiding clients to provide clearer, more useful project information from the start.',
+          },
+        ],
+      },
       reflection: {
         sections: [
           {
@@ -312,11 +312,11 @@ export const projects = [
       },
     ],
     testimonial: {
-      quote: 'This is a client testimonial.',
-      name: 'Client Name',
-      title: 'Client Title',
-      avatar: '',
-    },
+  quote: 'Before the website, I was losing work because producers couldn\'t hear my demos fast enough or I\'d miss DMs. Now they find me, hear everything they need, and submit proper inquiries. It\'s completely changed how clients see me — I\'m not just another freelancer anymore.',
+  name: 'Loveline Loverez',
+  title: 'Boses Pilipina, Owner & Voice Talent',
+  avatar: '',
+},
     images: [],
   },
 ]

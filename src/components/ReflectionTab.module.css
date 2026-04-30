@@ -46,7 +46,7 @@
   color: #2d6a4f;
   background-color: #d8f3dc;
   border-radius: 10px;
-  padding: var(--space-5) var(--space-6);
+  padding: 24px 28px;
   line-height: 1.65;
   margin: var(--space-4) 0 0;
 }
