@@ -39,14 +39,14 @@
   margin: 0;
 }
 
-/* Green callout — shown inside last section on desktop */
+/* Green callout */
 .callout {
   font-size: var(--text-sm);
   font-style: italic;
   color: #2d6a4f;
   background-color: #d8f3dc;
   border-radius: 10px;
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-5) var(--space-6);
   line-height: 1.65;
   margin: var(--space-4) 0 0;
 }
@@ -63,13 +63,13 @@
     gap: var(--space-8);
   }
 
-  /* Hide inline callout on tablet, show mobile one */
   .section:last-child .callout {
     display: none;
   }
 
   .calloutMobile {
     display: block;
+    margin: 0;
   }
 }
 
@@ -80,12 +80,12 @@
     gap: var(--space-8);
   }
 
-  /* Hide inline callout, show standalone one */
   .section:last-child .callout {
     display: none;
   }
 
   .calloutMobile {
     display: block;
+    margin: 0;
   }
 }

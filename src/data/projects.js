@@ -215,21 +215,33 @@ export const projects = [
         'Set up professional email integration for instant inquiry notifications',
       ],
       outcome: {
-        results: [
-          {
-            title: '120% increase in direct booking inquiries within first month',
-            description: 'Redesigned the site flow to remove friction, making demos and contact points immediately accessible. Focused on clear CTAs and faster load times, which drove more users to take action.',
-          },
-          {
-            title: 'Producers can now browse demos and submit inquiries 24/7',
-            description: null,
-          },
-          {
-            title: 'Client perception shifted from \'freelancer\' to \'professional voice talent\'',
-            description: null,
-          },
-        ],
-      },
+  results: [
+    {
+      title: '120% increase in direct booking inquiries within first month',
+      description: 'Redesigned the site flow to remove friction, making demos and contact points immediately accessible. Focused on clear CTAs and faster load times, which drove more users to take action.',
+    },
+    {
+      title: 'Producers can now browse demos and submit inquiries 24/7',
+      description: 'Structured the site so key content like demos and contact forms are always available and easy to navigate, removing dependency on back-and-forth communication.',
+    },
+    {
+      title: 'Client perception shifted from \'freelancer\' to \'professional voice talent\'',
+      description: 'Elevated the visual design, branding, and layout consistency to reflect a more premium, industry-standard presence that builds trust instantly.',
+    },
+    {
+      title: 'Mobile traffic accounts for 70% of site visits',
+      description: 'Designed mobile-first, ensuring smooth navigation, fast loading, and optimized media playback, which made the experience strong for the majority of users.',
+    },
+    {
+      title: 'Demo completion rate: 82% (clients listen to full reels)',
+      description: 'Organized demos with better hierarchy and playback experience, reducing drop-off and encouraging users to stay engaged through the full audio.',
+    },
+    {
+      title: 'Average inquiry quality improved significantly (more project details provided upfront)',
+      description: 'Refined the inquiry form with better structure and prompts, guiding clients to provide clearer, more useful project information from the start.',
+    },
+  ],
+},
       reflection: {
         sections: [
           {

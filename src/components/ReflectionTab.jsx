@@ -17,7 +17,7 @@ function ReflectionTab({ sections, callout }) {
         ))}
       </div>
 
-      {/* Callout on mobile shows after grid */}
+      {/* Callout on tablet/mobile shows after grid */}
       {callout && (
         <p className={`${styles.callout} ${styles.calloutMobile}`}>{callout}</p>
       )}
