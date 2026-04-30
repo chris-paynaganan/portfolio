@@ -1,0 +1,99 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.15;
+  margin: 0;
+}
+
+.text {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted, #888888);
+  line-height: 1.75;
+  margin: 0;
+  max-width: 820px;
+}
+
+.constraintsWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.constraintsLabel {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+/* 3-column grid desktop */
+.constraintsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--color-border, #e5e5e5);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.constraintItem {
+  padding: var(--space-6) var(--space-6);
+  border-right: 1px solid var(--color-border, #e5e5e5);
+}
+
+.constraintItem:last-child {
+  border-right: none;
+}
+
+.constraintText {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .text {
+    font-size: var(--text-base);
+  }
+
+  .constraintsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .constraintItem {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border, #e5e5e5);
+  }
+
+  .constraintItem:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .text {
+    font-size: var(--text-base);
+  }
+
+  .constraintsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .constraintItem {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border, #e5e5e5);
+  }
+
+  .constraintItem:last-child {
+    border-bottom: none;
+  }
+}

@@ -2,6 +2,9 @@ import { useParams, NavLink } from 'react-router-dom'
 import { projects } from '../data/projects'
 import TabPanel from '../components/TabPanel'
 import OverviewTab from '../components/OverviewTab'
+import ContextTab from '../components/ContextTab'
+import ChallengeTab from '../components/ChallengeTab'
+import ApproachTab from '../components/ApproachTab'
 import CaseStudyAccordion from '../components/CaseStudyAccordion'
 import TestimonialCard from '../components/TestimonialCard'
 import ProjectCard from '../components/ProjectCard'
@@ -28,9 +31,24 @@ function ProjectDetail() {
         ? <OverviewTab text={project.tabs.overview.text} meta={project.tabs.overview.meta} />
         : <p>{project.tabs.overview}</p>
     },
-    { label: 'Context',    content: <p>{project.tabs.context}</p> },
-    { label: 'Challenge',  content: <p>{project.tabs.challenge}</p> },
-    { label: 'Approach',   content: <p>{project.tabs.approach}</p> },
+    {
+      label: 'Context',
+      content: typeof project.tabs.context === 'string' && project.tabs.context !== 'Context content here.'
+        ? <ContextTab text={project.tabs.context} />
+        : <p>{project.tabs.context}</p>
+    },
+    {
+      label: 'Challenge',
+      content: typeof project.tabs.challenge === 'object'
+        ? <ChallengeTab text={project.tabs.challenge.text} constraints={project.tabs.challenge.constraints} />
+        : <p>{project.tabs.challenge}</p>
+    },
+    {
+      label: 'Approach',
+      content: Array.isArray(project.tabs.approach)
+        ? <ApproachTab items={project.tabs.approach} />
+        : <p>{project.tabs.approach}</p>
+    },
     { label: 'Outcome',    content: <p>{project.tabs.outcome}</p> },
     { label: 'Reflection', content: <p>{project.tabs.reflection}</p> },
   ]

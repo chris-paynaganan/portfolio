@@ -1,0 +1,91 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Checklist table — 2 columns desktop */
+.checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--color-border, #e5e5e5);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 80px 1fr; /* fixed check column + text column */
+  border-bottom: 1px solid var(--color-border, #e5e5e5);
+  border-right: 1px solid var(--color-border, #e5e5e5);
+}
+
+/* Remove right border on even items (right column) */
+.row:nth-child(even) {
+  border-right: none;
+}
+
+/* Remove bottom border on last two items */
+.row:nth-last-child(-n+2) {
+  border-bottom: none;
+}
+
+/* If odd total, last item spans full width */
+.row:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  border-right: none;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6) 0;
+  font-size: var(--text-lg);
+  color: var(--color-text);
+  font-weight: 400;
+  border-right: 1px solid var(--color-border, #e5e5e5);
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  padding: var(--space-6) var(--space-8);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Tablet + Mobile — 1 column */
+@media (max-width: 1199px) {
+  .checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .row {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border, #e5e5e5);
+  }
+
+  .row:last-child {
+    border-bottom: none;
+    grid-column: auto;
+  }
+
+  .row:nth-last-child(-n+2) {
+    border-bottom: 1px solid var(--color-border, #e5e5e5);
+  }
+
+  .row:last-child {
+    border-bottom: none;
+  }
+}
