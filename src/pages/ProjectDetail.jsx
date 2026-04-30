@@ -5,6 +5,8 @@ import OverviewTab from '../components/OverviewTab'
 import ContextTab from '../components/ContextTab'
 import ChallengeTab from '../components/ChallengeTab'
 import ApproachTab from '../components/ApproachTab'
+import OutcomeTab from '../components/OutcomeTab'
+import ReflectionTab from '../components/ReflectionTab'
 import CaseStudyAccordion from '../components/CaseStudyAccordion'
 import TestimonialCard from '../components/TestimonialCard'
 import ProjectCard from '../components/ProjectCard'
@@ -49,8 +51,16 @@ function ProjectDetail() {
         ? <ApproachTab items={project.tabs.approach} />
         : <p>{project.tabs.approach}</p>
     },
-    { label: 'Outcome',    content: <p>{project.tabs.outcome}</p> },
-    { label: 'Reflection', content: <p>{project.tabs.reflection}</p> },
+    { label: 'Outcome',
+      content: typeof project.tabs.outcome === 'object'
+        ? <OutcomeTab results={project.tabs.outcome.results} />
+        : <p>{project.tabs.outcome}</p>
+    },
+    { label: 'Reflection',
+      content: typeof project.tabs.reflection === 'object'
+        ? <ReflectionTab sections={project.tabs.reflection.sections} callout={project.tabs.reflection.callout} />
+        : <p>{project.tabs.reflection}</p>
+    },
   ]
 
   const moreProjects = projects.filter((p) => p.id !== project.id).slice(0, 3)

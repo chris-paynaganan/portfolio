@@ -29,6 +29,7 @@ export const projects = [
     caseStudy: [
       {
         title: 'Structure & User Flow',
+        teaser: 'Brief teaser for structure and user flow.',
         summary: 'Brief summary of the structure and user flow decisions made for this project.',
         detail: 'Detailed explanation of how the user flow was structured, what decisions were made and why, and how it impacted the overall experience.',
         image: '',
@@ -36,6 +37,7 @@ export const projects = [
       },
       {
         title: 'Design System',
+        teaser: 'Brief teaser for the design system.',
         summary: 'Brief summary of the design system built for this project.',
         detail: 'Detailed explanation of the design system and how it was built to scale across the platform.',
         image: '',
@@ -43,6 +45,7 @@ export const projects = [
       },
       {
         title: 'Research & Insights',
+        teaser: 'Brief teaser for research and insights.',
         summary: 'Brief summary of the research conducted and key insights discovered.',
         detail: 'Detailed breakdown of research methods used, key findings, and how those insights shaped design decisions.',
         image: '',
@@ -50,6 +53,7 @@ export const projects = [
       },
       {
         title: 'Exploration & Iteration',
+        teaser: 'Brief teaser for exploration and iteration.',
         summary: 'Brief summary of the exploration and iteration process.',
         detail: 'Detailed walkthrough of directions explored, what was tested, what failed, and how the final direction emerged.',
         image: '',
@@ -57,6 +61,7 @@ export const projects = [
       },
       {
         title: 'Validation',
+        teaser: 'Brief teaser for validation.',
         summary: 'Brief summary of how the design was validated.',
         detail: 'Detailed explanation of usability testing, feedback rounds, and what changed as a result of validation.',
         image: '',
@@ -64,6 +69,7 @@ export const projects = [
       },
       {
         title: 'Current Limitations & Future Direction',
+        teaser: 'Brief teaser for limitations and future direction.',
         summary: 'Brief summary of known limitations and what comes next.',
         detail: 'Honest reflection on what the current design does not solve yet, and what the roadmap looks like going forward.',
         image: '',
@@ -104,6 +110,7 @@ export const projects = [
     caseStudy: [
       {
         title: 'Structure & User Flow',
+        teaser: 'Brief teaser for structure and user flow.',
         summary: 'Brief summary of the structure and user flow decisions.',
         detail: 'Detailed explanation of how the user flow was structured.',
         image: '',
@@ -111,6 +118,7 @@ export const projects = [
       },
       {
         title: 'Design System',
+        teaser: 'Brief teaser for the design system.',
         summary: 'Brief summary of the design system.',
         detail: 'Detailed explanation of the design system.',
         image: '',
@@ -118,6 +126,7 @@ export const projects = [
       },
       {
         title: 'Research & Insights',
+        teaser: 'Brief teaser for research and insights.',
         summary: 'Brief summary of research and key insights.',
         detail: 'Detailed breakdown of research methods and findings.',
         image: '',
@@ -125,6 +134,7 @@ export const projects = [
       },
       {
         title: 'Exploration & Iteration',
+        teaser: 'Brief teaser for exploration and iteration.',
         summary: 'Brief summary of the exploration process.',
         detail: 'Detailed walkthrough of directions explored.',
         image: '',
@@ -132,6 +142,7 @@ export const projects = [
       },
       {
         title: 'Validation',
+        teaser: 'Brief teaser for validation.',
         summary: 'Brief summary of how the design was validated.',
         detail: 'Detailed explanation of usability testing and feedback rounds.',
         image: '',
@@ -139,6 +150,7 @@ export const projects = [
       },
       {
         title: 'Current Limitations & Future Direction',
+        teaser: 'Brief teaser for limitations and future direction.',
         summary: 'Brief summary of known limitations and what comes next.',
         detail: 'Honest reflection on current gaps and the roadmap going forward.',
         image: '',
@@ -202,13 +214,40 @@ export const projects = [
         'Optimized site structure for Filipino voice-over talent searches',
         'Set up professional email integration for instant inquiry notifications',
       ],
-      outcome: 'Outcome content here.',
-      reflection: 'Reflection content here.',
+      outcome: {
+        results: [
+          {
+            title: '120% increase in direct booking inquiries within first month',
+            description: 'Redesigned the site flow to remove friction, making demos and contact points immediately accessible. Focused on clear CTAs and faster load times, which drove more users to take action.',
+          },
+          {
+            title: 'Producers can now browse demos and submit inquiries 24/7',
+            description: null,
+          },
+          {
+            title: 'Client perception shifted from \'freelancer\' to \'professional voice talent\'',
+            description: null,
+          },
+        ],
+      },
+      reflection: {
+        sections: [
+          {
+            label: 'What I learned:',
+            text: 'Designing for audio is fundamentally about respecting the user\'s time. Every second of friction before playback is a reason to leave. This project reinforced something I apply across all my work: the best interface is one that gets out of the way and lets the content do what it was made to do.',
+          },
+          {
+            label: 'What I would do next:',
+            text: 'Add direct conversion tools — a booking form, an inquiry flow — so the platform closes the loop instead of handing off to Messenger. Introduce listening analytics to understand which demos drive the most engagement and use that data to inform how content is surfaced. And work with the client on a CMS setup early, so content ownership is built in from the start — not patched in later.',
+          },
+        ],
+        callout: 'Sometimes the most valuable thing you can design for someone is independence — from a platform they don\'t control, an algorithm they can\'t predict, and a first impression they didn\'t get to choose.',
+      },
     },
     caseStudy: [
       {
         title: 'Structure & User Flow',
-        teaser: 'How content is arranged so clients hear the work before anything else.',
+        teaser: 'Entry → Listen → Evaluate → Contact. No detours.',
         summary: 'Entry → Listen → Evaluate → Contact. No detours.',
         detail: 'Every structural decision — what appears first, how content is organized, what requires a click — was made in service of that goal. Content was organized around featured demos surfaced immediately on entry (strongest commercial work first), a categorized audio library organized by type and length for clients who want to dig deeper, and search and filtering for agencies with specific requirements. Flow: Entry → Listen → Evaluate → Contact. No unnecessary steps before hearing the work. No deep navigation required to form an opinion.',
         image: '',
