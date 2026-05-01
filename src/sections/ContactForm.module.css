@@ -208,6 +208,12 @@
   text-decoration: underline;
 }
 
+.error {
+  font-size: var(--text-sm);
+  color: #c0392b;
+  margin: 0;
+}
+
 /* Tablet */
 @media (min-width: 768px) and (max-width: 1199px) {
   .inner {

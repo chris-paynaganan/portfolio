@@ -1,5 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser'
 import styles from './ContactForm.module.css'
+
+const EMAILJS = {
+  serviceId: 'service_2zc4pao',
+  templateId: 'template_w53hlwm',
+  publicKey: '4iELiCBX0pELsS_QM',
+}
 
 const services = ['Web Design', 'Web Development', 'Branding', 'Design & Development', 'Other']
 const budgets = ['Less than $500', '$500 - $1,000', '$1,000 - $3,000', '$3,000 - $5,000', '$5,000+']
@@ -12,19 +19,37 @@ const infoItems = [
 ]
 
 function ContactForm() {
+  const formRef = useRef()
   const [formData, setFormData] = useState({
     name: '', email: '', service: '', budget: '', message: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState(null)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    setSubmitted(true)
-    setFormData({ name: '', email: '', service: '', budget: '', message: '' })
+    setSending(true)
+    setError(null)
+
+    try {
+      await emailjs.sendForm(
+        EMAILJS.serviceId,
+        EMAILJS.templateId,
+        formRef.current,
+        EMAILJS.publicKey
+      )
+      setSubmitted(true)
+      setFormData({ name: '', email: '', service: '', budget: '', message: '' })
+    } catch {
+      setError('Something went wrong. Please try again or email me directly.')
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -35,7 +60,7 @@ function ContactForm() {
         <div className={styles.info}>
           <h2 className={styles.infoTitle}>Get in touch</h2>
           <p className={styles.infoSubtitle}>
-            Whether it's a project inquiry, collaboration opportunity, or just 
+            Whether it's a project inquiry, collaboration opportunity, or just
             to say hello, I'd love to hear from you.
           </p>
           <div className={styles.infoGrid}>
@@ -59,13 +84,13 @@ function ContactForm() {
           {submitted ? (
             <div className={styles.success}>
               <h3>Message sent!</h3>
-              <p>Thanks for reaching out. I will get back to you within 24-48 hours.</p>
+              <p>Thanks for reaching out. I'll get back to you within 24–48 hours.</p>
               <button className={styles.resetBtn} onClick={() => setSubmitted(false)}>
                 Send another message
               </button>
             </div>
           ) : (
-            <form className={styles.form} onSubmit={handleSubmit}>
+            <form ref={formRef} className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.row}>
                 <div className={styles.field}>
                   <label className={styles.label}>Full Name</label>
@@ -140,9 +165,12 @@ function ContactForm() {
                   required
                 />
               </div>
-              <button type="submit" className={styles.submit}>
+
+              {error && <p className={styles.error}>{error}</p>}
+
+              <button type="submit" className={styles.submit} disabled={sending}>
                 <span className={styles.submitIcon}>✉</span>
-                Send message
+                {sending ? 'Sending...' : 'Send message'}
               </button>
             </form>
           )}
