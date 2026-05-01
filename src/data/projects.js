@@ -114,10 +114,10 @@ export const projects = [
         detail: 'I mapped existing tool workflows, developed journey maps for cross-platform interactions, and worked closely with product and engineering to define system logic before any visual design began.\n\nCore User Roles & Actions\n\nHealthcare Workers (Mobile)\n• Find available and urgent shifts before others claim them\n• Apply quickly with minimal friction\n• Manage personal schedule and availability\n\nClinics / Agencies (Web Dashboard)\n• Create, manage, and monitor shift schedules\n• Track which shifts are filled, pending, or still open\n• Assign or approve staff under time pressure\n\nKey Insights\n• Urgency drives behavior — Nurses actively compete to claim shifts, especially high-demand ones; the system had to support that dynamic\n• Speed is critical — Delays in visibility or interaction directly impact shift fulfillment and patient care\n• Fragmentation causes failure — The biggest issue wasn\'t lack of tools, but lack of connection between them\n• Not all urgent shifts are equal — Even urgent shifts get ignored if the details (location, patient condition, pay) aren\'t appealing\n\nHow Might We: How might we create a unified system that enables clinics to efficiently manage and fill shifts while allowing healthcare workers to quickly discover and act on urgent opportunities?',
         image: '',
         links: [
-          { label: 'User Persona', url: '#' },
-          { label: 'Journey Map', url: '#' },
-          { label: 'Empathy Map', url: '#' },
-          { label: 'Sitemap', url: '#' },
+          { label: 'User Persona', url: 'https://www.figma.com/design/c6lYGRxcm4vtlNxSoWqMvo/-OFFICIAL--CIShifts-Design?node-id=94-3' },
+          { label: 'Journey Map', url: 'https://www.figma.com/design/c6lYGRxcm4vtlNxSoWqMvo/-OFFICIAL--CIShifts-Design?node-id=94-4' },
+          { label: 'Empathy Map', url: 'https://www.figma.com/design/c6lYGRxcm4vtlNxSoWqMvo/-OFFICIAL--CIShifts-Design?node-id=94-5' },
+          { label: 'Sitemap', url: 'https://www.figma.com/design/c6lYGRxcm4vtlNxSoWqMvo/-OFFICIAL--CIShifts-Design?node-id=94-6' },
         ],
       },
       {
@@ -126,7 +126,7 @@ export const projects = [
         summary: 'CiShifts required designing two synchronized platforms — not just individually, but as a connected system.',
         detail: 'Every action on one side had a consequence on the other. A shift created by a clinic had to immediately surface on a nurse\'s mobile feed. A nurse\'s cancellation had to instantly trigger re-notification to nearby available staff.\n\nThe system was structured around one continuous loop:\nClinic creates shift → Shift becomes available → Nurse discovers shift → Nurse claims shift → Clinic monitors fulfillment → If cancelled, loop resets\n\nThis required aligning three things across both platforms simultaneously: what users see, when they see it, and what they can do next.',
         image: '',
-        links: [{ label: 'System Flow Diagram', url: '#' }],
+        links: [{ label: 'System Flow Diagram', url: 'https://www.figma.com/design/c6lYGRxcm4vtlNxSoWqMvo/-OFFICIAL--CIShifts-Design?node-id=94-7' }],
       },
       {
         title: 'Designing for Urgency',
@@ -150,7 +150,7 @@ export const projects = [
         summary: 'A product this complex required a design system that could hold it together across both mobile and web.',
         detail: 'I built a structured component library covering:\n\n• Scheduling, dashboards, shift listings, and notifications\n• Consistent interaction patterns across all user roles\n• A complete healthcare-context iconography set\n• Defined component states to support real-time behavior changes',
         image: '',
-        links: [{ label: 'Design System', url: '#' }],
+        links: [{ label: 'Design System', url: 'https://www.figma.com/design/c6lYGRxcm4vtlNxSoWqMvo/-OFFICIAL--CIShifts-Design?node-id=94-8' }],
       },
       {
         title: 'Feature Simplification',
@@ -763,10 +763,10 @@ export const projects = [
         detail: 'User Types\n\nYacht Owner\n• Focused on listing boats, defining routes, and managing opportunities\n\nCrew Member\n• Focused on showcasing experience and finding roles on available journeys\n\nTraveler\n• Focused on exploring destinations, ports, and available trips\n\nKey Insights\n\n• Different users, shared space — multiple roles occupied the same environment without workflow separation\n• Discovery was the bottleneck — features existed, but users couldn\'t find or navigate them efficiently\n• Speed mattered — especially for crew and opportunity matching, users needed to scan and decide fast\n• Behavior didn\'t match structure — users leaned toward quick scanning, not deep navigation\n\nHow Might We: How might we simplify a multi-role maritime platform so users can quickly discover, evaluate, and act on relevant information — without navigating through cluttered, unstructured content?',
         image: '',
         links: [
-  { label: 'User Personas', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-5' },
-  { label: 'Empathy Map', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-9' },
-  { label: 'Journey Map', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-10' },
-  { label: 'Sitemap', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=3039-6893' },
+          { label: 'User Personas', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-5' },
+          { label: 'Empathy Map', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-9' },
+          { label: 'Journey Map', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-10' },
+          { label: 'Sitemap', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=3039-6893' },
 ],
       },
       {
