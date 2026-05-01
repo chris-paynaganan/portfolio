@@ -344,12 +344,14 @@
   }
 
   .headerMeta {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--space-5);
-    min-width: unset;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
     border-top: 1px solid var(--color-border, #e5e5e5);
     padding-top: var(--space-5);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-5);
   }
 
   .psoItem {
