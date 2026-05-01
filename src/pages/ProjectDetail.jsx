@@ -46,7 +46,11 @@ function ProjectDetail() {
     {
       label: 'Challenge',
       content: typeof project.tabs.challenge === 'object'
-        ? <ChallengeTab text={project.tabs.challenge.text} constraints={project.tabs.challenge.constraints} />
+        ? <ChallengeTab
+            text={project.tabs.challenge.text}
+            constraints={project.tabs.challenge.constraints}
+            hmw={project.tabs.challenge.hmw}
+          />
         : <p>{project.tabs.challenge}</p>
     },
     {
@@ -72,13 +76,19 @@ function ProjectDetail() {
   const moreProjects = projects.filter((p) => p.id !== project.id).slice(0, 3)
   const problem = typeof project.problem === 'object' ? project.problem : { text: project.problem, bullets: [], callout: '' }
 
+  // Pull role and timeline from meta if available
+  const meta = typeof project.tabs.overview === 'object' ? project.tabs.overview.meta : null
+  const metaRole = meta?.find(m => m.label === 'Role')?.value || null
+  const metaTimeline = meta?.find(m => m.label === 'Timeline')?.value || null
+  const metaType = meta?.find(m => m.label === 'Type')?.value || null
+
   return (
     <>
       {/* Project Header */}
       <section className={styles.header}>
         <div className="container">
           <NavLink to="/projects" className={styles.back}>
-            Back to Projects
+            ← Back to Projects
           </NavLink>
 
           {/* Status banner */}
@@ -89,13 +99,49 @@ function ProjectDetail() {
             </div>
           )}
 
-          <div className={styles.tags}>
-            {project.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>{tag}</span>
-            ))}
+          {/* Two-column header */}
+          <div className={styles.headerGrid}>
+            {/* Left — tags + title + description */}
+            <div className={styles.headerLeft}>
+              <div className={styles.tags}>
+                {project.tags.map((tag) => (
+                  <span key={tag} className={styles.tag}>{tag}</span>
+                ))}
+              </div>
+              <h1 className={styles.title}>{project.title}</h1>
+              <p className={styles.description}>{project.shortDescription}</p>
+            </div>
+
+            {/* Right — meta sidebar */}
+            {(metaRole || metaTimeline || metaType) && (
+              <div className={styles.headerMeta}>
+                {project.client && (
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>Client</span>
+                    <span className={styles.metaValue}>{project.client}</span>
+                  </div>
+                )}
+                {metaRole && (
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>Role</span>
+                    <span className={styles.metaValue}>{metaRole}</span>
+                  </div>
+                )}
+                {metaTimeline && (
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>Timeline</span>
+                    <span className={styles.metaValue}>{metaTimeline}</span>
+                  </div>
+                )}
+                {metaType && (
+                  <div className={styles.metaItem}>
+                    <span className={styles.metaLabel}>Type</span>
+                    <span className={styles.metaValue}>{metaType}</span>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
-          <h1 className={styles.title}>{project.title}</h1>
-          <p className={styles.description}>{project.shortDescription}</p>
         </div>
       </section>
 
@@ -104,8 +150,8 @@ function ProjectDetail() {
         <div className="container">
           <div className={styles.imagePlaceholder}>
             {(project.heroImage || project.thumbnail) && (
-  <img src={project.heroImage || project.thumbnail} alt={project.title} />
-)}
+              <img src={project.heroImage || project.thumbnail} alt={project.title} />
+            )}
           </div>
         </div>
       </section>
