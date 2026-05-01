@@ -763,11 +763,11 @@ export const projects = [
         detail: 'User Types\n\nYacht Owner\n• Focused on listing boats, defining routes, and managing opportunities\n\nCrew Member\n• Focused on showcasing experience and finding roles on available journeys\n\nTraveler\n• Focused on exploring destinations, ports, and available trips\n\nKey Insights\n\n• Different users, shared space — multiple roles occupied the same environment without workflow separation\n• Discovery was the bottleneck — features existed, but users couldn\'t find or navigate them efficiently\n• Speed mattered — especially for crew and opportunity matching, users needed to scan and decide fast\n• Behavior didn\'t match structure — users leaned toward quick scanning, not deep navigation\n\nHow Might We: How might we simplify a multi-role maritime platform so users can quickly discover, evaluate, and act on relevant information — without navigating through cluttered, unstructured content?',
         image: '',
         links: [
-          { label: 'User Personas', url: '#' },
-          { label: 'Empathy Map', url: '#' },
-          { label: 'Journey Map', url: '#' },
-          { label: 'Sitemap', url: '#' },
-        ],
+  { label: 'User Personas', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-5' },
+  { label: 'Empathy Map', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-9' },
+  { label: 'Journey Map', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-10' },
+  { label: 'Sitemap', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=3039-6893' },
+],
       },
       {
         title: 'Design Decisions',
@@ -776,9 +776,8 @@ export const projects = [
         detail: 'It didn\'t.\n\nThe reframe: swipe as navigation, not verdict. Users can browse continuously, return to previously viewed items, and make decisions without pressure. That single adaptation made the pattern work for the product instead of against it.\n\nKey Iterations\n\n• Scope reduction — Deferred secondary features to keep v1 focused and prevent recreating the original platform\'s overload\n• Progressive disclosure — Reduced upfront detail; deeper content accessible on tap\n• Unified interaction model — Consistent card and swipe pattern across all three user types despite different goals',
         image: '',
         links: [
-          { label: 'Low-Fidelity Wireframes', url: '#' },
-          { label: 'Iteration Comparisons', url: '#' },
-        ],
+  { label: 'Low-Fidelity Wireframes', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=1-6' },
+],
       },
       {
         title: 'Design System',
@@ -787,8 +786,8 @@ export const projects = [
         detail: 'The system was built for handoff: annotated, documented, and structured for a developer the client would engage post-design.\n\nHandoff\n\nAlthough not embedded with a developer, I flagged implementation constraints throughout the process, simplified interactions where mobile complexity could slow development, and delivered structured Figma files with documented flows and reusable components — designed to be handed off asynchronously without needing me in the room.',
         image: '',
         links: [
-          { label: 'Component Library', url: '#' },
-        ],
+  { label: 'Component Library', url: 'https://www.figma.com/design/jMVf3876R3iFQF69xRo6x7/SailSwipe?node-id=3029-663' },
+],
       },
       {
         title: 'Outcomes',
