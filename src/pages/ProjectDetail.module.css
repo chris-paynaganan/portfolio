@@ -25,7 +25,7 @@
 }
 
 .back {
-  display: inline-block;
+  display: block;
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-text-muted);
@@ -227,7 +227,8 @@
   display: block;
   background-color: rgba(220, 100, 80, 0.08);
   border-radius: 8px;
-  padding: var(--space-4) var(--space-5);
+  padding: var(--space-7) var(--space-6);   /* was: space-4 space-5 */
+  margin-top: var(--space-4);               /* add this */
   font-size: var(--text-base);
   font-style: italic;
   color: #c0392b;
