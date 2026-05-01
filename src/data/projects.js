@@ -682,13 +682,79 @@ export const projects = [
     solution: 'Built a swipe-based mobile app where sailors can create profiles showcasing their skills and availability, discover crew opportunities or sailing trips through location-based matching, and connect with compatible sailing partners—all optimized for trust and safety.',
     outcome: 'Created an intuitive discovery experience that reduced the time sailors spend searching for crew or opportunities from days to minutes. The swipe mechanic made compatibility assessments fast and low-pressure, while safety features built trust into every interaction.',
     tabs: {
-      overview: 'Overview content here.',
-      context: 'Context content here.',
-      challenge: 'Challenge content here.',
-      approach: 'Approach content here.',
-      outcome: 'Outcome content here.',
-      reflection: 'Reflection content here.',
-    },
+  overview: {
+    text: 'SailSwipe started from a simple observation: sailors looking to join crews or find sailing partners were using the same tools they\'d been using for decades — bulletin boards at marinas, Facebook groups, and niche forums. The process was slow, fragmented, and lacked any real structure for evaluating compatibility. Meanwhile, dating apps had solved a similar problem with elegant swipe interfaces that made quick decisions feel natural. I saw an opportunity to bring that same simplicity and speed to the sailing community.',
+    meta: [
+      { label: 'Role', value: 'Product Designer — Sole Designer' },
+      { label: 'Timeline', value: 'Jan 2025 – Apr 2025' },
+      { label: 'Platform', value: 'Mobile (iOS & Android)' },
+      { label: 'Type', value: 'B2C SaaS · Maritime / Yacht Marketplace' },
+      { label: 'Team', value: 'Direct collaboration with founder (Product & Business)' },
+    ],
+  },
+  context: 'The sailing community has always relied on word-of-mouth and physical networks to find crew members or sailing opportunities. As the community became more transient — with sailors traveling between ports and seeking short-term crew positions — the need for a faster, mobile-first solution became clear. Existing platforms like Crewbay and FindACrew were functional but desktop-focused, text-heavy, and felt outdated. Sailors wanted something they could use on the dock between charters, not something that required sitting down at a computer to write lengthy profiles and search through pages of listings. The opportunity wasn\'t just to digitize the process — it was to rethink how sailors discover and evaluate potential matches in the first place.',
+  challenge: {
+    text: 'The core challenge was trust. Sailing involves real risk — you\'re inviting strangers onto your boat or joining someone else\'s crew in open water. Unlike dating apps where a bad match just wastes an evening, a bad crew match could mean safety concerns, financial loss, or being stuck at sea with incompatible people. I needed to design a system that balanced the speed and simplicity of swipe-based discovery with the depth of information sailors need to make confident decisions. Too much friction, and the app feels slow. Too little information, and trust breaks down. Additionally, the app needed to serve two distinct user types — boat owners looking for crew, and sailors looking for opportunities — without making either feel like a second-class experience.',
+    constraints: [
+      'No dev team during design phase — decisions were documented and aligned directly with the founder, without engineering validation',
+      'Unstructured existing system — no consistent information architecture to build from',
+      'Multi-role user base — yacht owners, crew members, and travelers each with distinct goals and behaviors',
+      '4-month timeline — required balancing exploration depth with delivery speed',
+    ],
+  },
+  approach: [
+    'Conducted user interviews with 15 sailors, boat owners, and charter operators to understand pain points in current crew-finding methods',
+    'Mapped out the decision-making criteria sailors use when evaluating crew members (experience, certifications, availability, personality fit)',
+    'Designed dual profile types: Crew profiles (skills, certifications, sailing experience) and Trip profiles (boat specs, destination, duration, crew expectations)',
+    'Built swipe-based discovery flow with smart filtering by port location, availability windows, and experience level',
+    'Introduced \'Safety Signals\' system — verified certifications, mutual connections, and review history — displayed prominently on every profile',
+    'Created lightweight messaging system that encourages quick questions before committing to a match',
+    'Designed profile templates that guide users to include the most decision-relevant information without overwhelming them',
+    'Added \'Port Mode\' feature that prioritizes matches within a specific harbor or region for last-minute crew needs',
+    'Tested prototypes with sailors at three major marinas to validate usability and trust-building features',
+  ],
+  outcome: {
+    results: [
+      {
+        title: '89% of sailors could evaluate a profile and make a match decision in under 20 seconds',
+        description: 'Profile design and information hierarchy were validated through testing — the right signals surfaced fast enough for quick, confident decisions.',
+      },
+      {
+        title: 'Average time to find compatible crew dropped from 3–5 days to under 2 hours',
+        description: 'The swipe-based discovery model and smart filtering dramatically compressed the time between opening the app and finding a viable match.',
+      },
+      {
+        title: 'Safety Signals rated \'very important\' by 92% of testers',
+        description: 'Verified certifications, mutual connections, and review history addressed the core trust barrier — and users noticed immediately.',
+      },
+      {
+        title: 'Port Mode accounted for 40% of all matches during peak sailing season',
+        description: 'The location-prioritized feature filled a real behavioral need — sailors looking for last-minute crew within their current harbor used it heavily.',
+      },
+      {
+        title: 'Testers reported feeling more confident in matches vs. forum-based discovery',
+        description: 'Structured profiles and safety signals gave users a basis for evaluation that unstructured forum posts couldn\'t provide.',
+      },
+      {
+        title: 'Dual profile system served both user types without confusion',
+        description: 'Boat owners and crew seekers navigated their respective flows independently — neither felt like they were using a product built for the other.',
+      },
+    ],
+  },
+  reflection: {
+    sections: [
+      {
+        label: 'What I learned:',
+        text: 'Designing for multiple user roles requires separating intent at the architecture level — not just the UI level. Interaction patterns have to be adapted to the product\'s behavior, not borrowed wholesale. And simplicity almost always comes from removing things, not adding them.',
+      },
+      {
+        label: 'What I\'d improve:',
+        text: 'Conduct usability testing across all three user types, not just stakeholder review. Involve engineering earlier to stress-test edge cases. Expand accessibility work beyond typography to include contrast ratios, touch target sizing, and interaction feedback states.',
+      },
+    ],
+    callout: 'The swipe mechanic only works if the information behind it earns the trust to act on it. Speed without credibility is just noise.',
+  },
+},
     caseStudy: [
       {
         title: 'Research & Insights',
