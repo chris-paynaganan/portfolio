@@ -2,9 +2,9 @@ import cishiftsDesktop from '../assets/images/cishifts desktop.png'
 import tbjDesktop from '../assets/images/tbj desktop.png'
 import bpCover from '../assets/images/bp-cover.svg'
 import bpThumbnail from '../assets/images/bp-thumbnail.svg'
-import sailswipeThumbnail from '../assets/images/sailswipe thumbnail.svg'
-import hustleThumbnail from '../assets/images/hustle and muscle fitness thumbnail.svg'
-import resonateThumbnail from '../assets/images/resonate thumbnail.svg'
+import sailswipeThumbnail from '../assets/images/sailswipe-thumbnail.svg'
+import hustleThumbnail from '../assets/images/hustle-and-muscle-thumbnail.svg'
+import resonateThumbnail from '../assets/images/resonate-thumbnail.svg'
 
 export const projects = [
   {
