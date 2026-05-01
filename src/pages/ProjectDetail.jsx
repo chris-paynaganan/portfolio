@@ -80,6 +80,15 @@ function ProjectDetail() {
           <NavLink to="/projects" className={styles.back}>
             Back to Projects
           </NavLink>
+
+          {/* Status banner */}
+          {project.status && (
+            <div className={styles.statusBanner}>
+              <span className={styles.statusDot} />
+              {project.status} — This case study reflects the project as it stands today and will be updated as work progresses.
+            </div>
+          )}
+
           <div className={styles.tags}>
             {project.tags.map((tag) => (
               <span key={tag} className={styles.tag}>{tag}</span>
@@ -168,7 +177,7 @@ function ProjectDetail() {
       )}
 
       {/* Testimonial */}
-      {project.testimonial && (
+      {project.testimonial && project.testimonial.name !== 'Client Name' && (
         <section className={styles.testimonial}>
           <div className={styles.testimonialInner}>
             <TestimonialCard testimonial={project.testimonial} />

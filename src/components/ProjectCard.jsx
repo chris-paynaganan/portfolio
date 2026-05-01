@@ -14,6 +14,9 @@ function ProjectCard({ project }) {
         ) : (
           <div className={styles.placeholder} />
         )}
+        {project.status && (
+          <span className={styles.statusBadge}>{project.status}</span>
+        )}
       </div>
 
       {/* Content */}
