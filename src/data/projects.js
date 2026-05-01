@@ -5,6 +5,9 @@ import bpThumbnail from '../assets/images/bp-thumbnail.svg'
 import sailswipeThumbnail from '../assets/images/sailswipe-thumbnail.svg'
 import hustleThumbnail from '../assets/images/hustle-and-muscle-thumbnail.svg'
 import resonateThumbnail from '../assets/images/resonate-thumbnail.svg'
+import sailswipeHero from '../assets/images/sailswipe hero image.svg'
+import hustleHero from '../assets/images/hustle and muscle fitness hero image.svg'
+import resonateHero from '../assets/images/resonate hero image.svg'
 
 export const projects = [
   {
@@ -512,6 +515,7 @@ export const projects = [
     shortDescription:
       'An ongoing brand and platform design project for Erwin Natividad — a voice coach and voiceover artist whose expertise outpaces his current online presence. The work focuses on building a cohesive digital identity that clearly positions him as a coach, centralizes his voice work, and creates a structured pathway for clients to discover, evaluate, and book sessions.',
     thumbnail: resonateThumbnail,
+    heroImage: resonateHero,
     tags: ['Branding', 'Web Design'],
     problem: {
       text: 'Despite strong experience as both a voice coach and voiceover artist, Erwin had no structured online presence that translated that expertise into visible, actionable credibility. His current footprint doesn\'t clearly position him as a coach, doesn\'t centralize his work, and offers no pathway for interested users to take the next step. The gap isn\'t talent. It\'s the distance between what he can do and what someone finds when they search for him.',
@@ -676,6 +680,7 @@ export const projects = [
     shortDescription:
       'Redesigned a congested maritime marketplace into a streamlined, mobile-first platform — replacing a fragmented web experience with a swipe-based discovery model built around three distinct user types.',
     thumbnail: sailswipeThumbnail,
+    heroImage: sailswipeHero,
     tags: ['Mobile App', 'Branding'],
     problem: {
       text: 'SailSwipe originally served yacht owners, crew members, and travelers through a single web-based platform. As features expanded without a clear structure, the experience became harder to navigate. Users relied on the platform for time-sensitive tasks — finding port details, connecting with crew, discovering opportunities — but the interface made each of these harder than it needed to be.',
@@ -816,6 +821,7 @@ export const projects = [
     shortDescription:
       'Led the design and rapid delivery of a responsive website for a 24/7 gym that previously relied entirely on Facebook for customer interactions — replacing manual, message-based inquiries with a structured, self-service platform delivered in 6 weeks.',
     thumbnail: hustleThumbnail,
+    heroImage: hustleHero,
     tags: ['Branding', 'Web Design'],
     problem: {
       text: 'Hustle & Muscle Fitness operated as a 24/7 gym but relied entirely on Facebook as its primary customer touchpoint. While the business was highly responsive, this created a dependency on constant manual interaction to handle inquiries, signups, and bookings. As demand increased, this approach became inefficient and difficult to scale.',
