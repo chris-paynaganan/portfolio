@@ -1,6 +1,7 @@
 import cishiftsDesktop from '../assets/images/cishifts desktop.png'
 import tbjDesktop from '../assets/images/tbj desktop.png'
 import bpCover from '../assets/images/bp-cover.svg'
+import bpThumbnail from '../assets/images/bp-thumbnail.svg'
 
 export const projects = [
   {
@@ -193,93 +194,168 @@ export const projects = [
     images: [],
   },
   {
-    id: 'brahmans-journal',
-    client: "THE BRAHMANS' JOURNAL",
-    title: 'Envisioning the digitalization of campus journalism experience',
-    shortDescription:
-      'A modern web design concept that transforms the school publication into an interactive digital platform. With responsive layouts, real-time updates, and multimedia storytelling, it enhances content creation and engagement, making campus journalism more accessible and dynamic.',
-    thumbnail: tbjDesktop,
-    tags: ['Branding', 'Web Design'],
-    problem: {
-      text: 'What problem did the client have?',
-      bullets: [],
-      callout: '',
-    },
-    solution: 'What did you do to solve it?',
-    outcome: 'What was the result?',
-    tabs: {
-      overview: 'Overview content here.',
-      context: 'Context content here.',
-      challenge: 'Challenge content here.',
-      approach: 'Approach content here.',
-      outcome: 'Outcome content here.',
-      reflection: 'Reflection content here.',
-    },
-    caseStudy: [
-      {
-        title: 'Structure & User Flow',
-        teaser: 'Brief teaser for structure and user flow.',
-        summary: 'Brief summary of the structure and user flow decisions.',
-        detail: 'Detailed explanation of how the user flow was structured.',
-        image: '',
-        links: [],
-      },
-      {
-        title: 'Design System',
-        teaser: 'Brief teaser for the design system.',
-        summary: 'Brief summary of the design system.',
-        detail: 'Detailed explanation of the design system.',
-        image: '',
-        links: [],
-      },
-      {
-        title: 'Research & Insights',
-        teaser: 'Brief teaser for research and insights.',
-        summary: 'Brief summary of research and key insights.',
-        detail: 'Detailed breakdown of research methods and findings.',
-        image: '',
-        links: [],
-      },
-      {
-        title: 'Exploration & Iteration',
-        teaser: 'Brief teaser for exploration and iteration.',
-        summary: 'Brief summary of the exploration process.',
-        detail: 'Detailed walkthrough of directions explored.',
-        image: '',
-        links: [],
-      },
-      {
-        title: 'Validation',
-        teaser: 'Brief teaser for validation.',
-        summary: 'Brief summary of how the design was validated.',
-        detail: 'Detailed explanation of usability testing and feedback rounds.',
-        image: '',
-        links: [],
-      },
-      {
-        title: 'Current Limitations & Future Direction',
-        teaser: 'Brief teaser for limitations and future direction.',
-        summary: 'Brief summary of known limitations and what comes next.',
-        detail: 'Honest reflection on current gaps and the roadmap going forward.',
-        image: '',
-        links: [],
-      },
+  id: 'brahmans-journal',
+  client: "THE BRAHMANS' JOURNAL",
+  title: 'Envisioning the digitalization of campus journalism experience',
+  shortDescription:
+    'A modern web design concept that transforms the school publication into an interactive digital platform. With responsive layouts, real-time updates, and multimedia storytelling, it enhances content creation and engagement, making campus journalism more accessible and dynamic.',
+  thumbnail: tbjDesktop,
+  tags: ['Branding', 'Web Design'],
+  problem: {
+    text: 'The college publication had been relying solely on printed newspapers and Facebook posts for news distribution. Over time, this led to two major issues: loss of old records and fragmented communication. Past issues were either misplaced, damaged, or simply inaccessible. Meanwhile, multiple departments began creating their own Facebook pages for announcements, resulting in inconsistent and confusing information for students and faculty.',
+    bullets: [
+      'Physical copies of past newspapers frequently lost or poorly archived',
+      'No unified digital repository for previous publications',
+      'Fragmented communication due to multiple social media pages causing misinformation',
+      'Limited institutional support and budget constraints for web development',
     ],
-    testimonial: {
-      quote: 'This is a client testimonial.',
-      name: 'Client Name',
-      title: 'Client Title',
-      avatar: '',
-    },
-    images: [],
+    callout: 'The publication had a voice — but no permanent place to put it.',
   },
+  solution: 'Designed a centralized digital publication platform that preserves the look and feel of a traditional newspaper while modernizing accessibility and engagement — with organized archiving, subscription features, and a unified news hub that replaced scattered social media pages.',
+  outcome: 'Established the first complete UX vision and digital design framework for the school\'s publication. Stakeholder feedback confirmed the design reflected the publication\'s identity, and faculty moved toward supporting digital adoption for the first time.',
+  tabs: {
+    overview: {
+      text: 'As the sole UX designer, I led a complete rethinking of our school publication\'s digital experience — from user research and survey design to wireframing, prototyping, and usability testing — over a 3–6 week period. The goal was to address declining student engagement and make the platform more accessible, visually cohesive, and easier to navigate.',
+      meta: [
+        { label: 'Role', value: 'UX Designer (Solo Project)' },
+        { label: 'Tools', value: 'Figma, Google Forms, Photoshop, Illustrator' },
+        { label: 'Duration', value: '3–6 weeks' },
+        { label: 'Team', value: 'Independent — collaborating with college publication team' },
+        { label: 'Status', value: 'Design handoff complete (awaiting implementation)' },
+      ],
+    },
+    context: 'The college publication had been relying solely on printed newspapers and Facebook posts for news distribution. Over time, this led to two major issues: loss of old records and fragmented communication. Past issues of printed publications were either misplaced, damaged, or simply inaccessible. Meanwhile, multiple departments began creating their own Facebook pages for announcements, resulting in inconsistent and confusing information for students and faculty. To address these challenges, I proposed a centralized digital publication platform — a website that would both archive past papers and serve as the primary hub for news, announcements, and features. This project aimed to modernize how the publication engages readers, especially Gen Z students who primarily consume content online.',
+    challenge: {
+      text: 'The core challenge was designing a platform that could serve two very different needs simultaneously: a reliable digital archive for institutional memory, and an engaging, mobile-friendly reading experience for students who had already moved on from print. The design had to rebuild trust in a single source of truth — while working within zero budget and no dedicated development support.',
+      constraints: [
+        'Zero budget — all design decisions had to account for low-cost hosting and free tooling',
+        'No development team — the prototype needed to be fully hand-off ready for a future developer the client would engage independently',
+        'Institutional inertia — limited faculty support for digital adoption required the design to demonstrate clear, immediate value',
+        'Dual audience — students needed engagement, faculty needed credibility and archival reliability',
+      ],
+      hmw: [
+        { challenge: 'Old publications scattered or lost', solution: 'How might we create a centralized, searchable digital archive?' },
+        { challenge: 'Low engagement with print media', solution: 'How might we design a reading experience as engaging as social media while preserving credibility?' },
+        { challenge: 'Multiple Facebook pages causing misinformation', solution: 'How might we unify communication so students rely on one verified news source?' },
+        { challenge: 'Limited institutional support', solution: 'How might we build a low-maintenance, scalable design system that encourages adoption?' },
+        { challenge: 'Tight budget', solution: 'How might we propose a UX structure that works with low-cost hosting while staying accessible and visually strong?' },
+      ],
+    },
+    approach: [
+      'Used Google Forms surveys to gather broad feedback from students on reading habits and content preferences',
+      'Analyzed pain points from both organizational and user perspectives to define the core problem statement',
+      'Created wireframes and high-fidelity mockups in Figma focusing on clarity, hierarchy, and continuity with print identity',
+      'Defined interaction flows for browsing, archiving, subscribing, and commenting',
+      'Preserved the visual language of a traditional newspaper while modernizing layout for digital consumption',
+      'Designed an archive system with organized categories and searchable past issues',
+      'Ran small-scale usability tests with volunteer students and faculty',
+      'Iterated on navigation structure and text hierarchy based on usability feedback',
+      'Delivered complete design documentation and interaction guide for developer handoff',
+    ],
+    outcome: {
+      results: [
+        {
+          title: 'First complete UX vision for the publication\'s digital future',
+          description: 'Introduced a hand-off-ready design that gave the publication a permanent, credible online presence for the first time — complete with prototype, documentation, and developer guide.',
+        },
+        {
+          title: 'Centralized archive system designed and prototyped',
+          description: 'Created an organized structure for browsing and searching past issues — solving the core problem of scattered and inaccessible historical content.',
+        },
+        {
+          title: 'Faculty moved toward supporting digital adoption',
+          description: 'The design demonstrated enough clarity and value that faculty advisers — previously unsupportive of website initiatives — began endorsing the digital transition.',
+        },
+        {
+          title: 'Stakeholder feedback validated the direction',
+          description: '"This design finally gives the publication a permanent home online. It feels like us — just evolved." — Editor-in-Chief',
+        },
+        {
+          title: 'Established brand consistency across the platform',
+          description: 'Replaced fragmented social media pages with a unified visual identity and content structure that reflected the publication\'s credibility and institutional role.',
+        },
+      ],
+    },
+    reflection: {
+      sections: [
+        {
+          label: 'What I learned:',
+          text: 'At the start, I didn\'t know formal design frameworks like Agile or design sprints. This project taught me that what truly matters is clarity of goals and staying aligned to them. Frameworks help, but alignment drives completion and quality.',
+        },
+        {
+          label: 'On collaboration:',
+          text: 'Even as a solo designer, collaboration mattered. Continuous communication with the publication staff ensured the design reflected their real needs. I learned that checking in regularly beats assuming silently.',
+        },
+        {
+          label: 'What I\'d do differently:',
+          text: 'With more resources, I\'d run user interviews or workshops to add qualitative insights. Surveys gave breadth, but interviews would have added emotional depth and refined the engagement features significantly.',
+        },
+        {
+          label: 'How this shapes my future work:',
+          text: 'This project strengthened my belief in simplicity, alignment, and clarity. Whether for clients or startups, I\'ll continue to focus on identifying pain points, keeping design intentional, and communicating value without unnecessary jargon. Stakeholders care about impact, not buzzwords.',
+        },
+      ],
+      callout: 'Working within zero budget forced strategic decisions. I focused on sustainable design choices that could scale easily once developed. The final prototype became a practical blueprint — not just visuals, but a complete foundation for digital transformation.',
+    },
+  },
+  caseStudy: [
+    {
+      title: 'Research & Insights',
+      teaser: 'Student surveys and behavioral analysis — understanding how Gen Z actually consumes campus news.',
+      summary: 'Research was conducted through Google Forms surveys targeting students, combined with behavioral observation of how the existing print and Facebook-based system was being used.',
+      detail: 'Core User Actions\n\n• Access current campus news quickly\n• Find specific past publications or articles\n• Share content with peers\n• Subscribe for updates without checking multiple pages\n\nKey Insights\n\n• Students had already moved on from print — most consumed news exclusively on mobile\n• Facebook was familiar but unreliable — students couldn\'t distinguish official pages from unofficial ones\n• Archive access was a high-value need — alumni and faculty specifically wanted historical issues\n• Trust was the core problem — fragmentation had eroded confidence in any single source\n\nHow Might We: How might we design a centralized platform that gives Gen Z students a reason to treat the publication as their primary campus news source?',
+      image: '',
+      links: [],
+    },
+    {
+      title: 'Structure & User Flow',
+      teaser: 'A newspaper structure reimagined for digital — archive first, engagement second.',
+      summary: 'The platform was structured to preserve the credibility of a traditional publication while making content discovery as fast as a social media feed.',
+      detail: 'Sitemap\n\n• Homepage — Featured stories, latest issue, quick navigation\n• News — Categorized articles by section (campus, features, opinion, sports)\n• Archive — Browsable and searchable past issues organized by volume and year\n• About — Publication history, staff directory, mission\n• Subscribe / Contact — Engagement and feedback channels\n\nPrimary Flow: Entry → Browse or Search → Read → Subscribe\n\nThe archive was given equal visual weight to current news — a deliberate decision to signal that historical content is as valued as today\'s headlines.',
+      image: '',
+      links: [],
+    },
+    {
+      title: 'Design System',
+      teaser: 'Traditional newspaper visual language — adapted for screens without losing identity.',
+      summary: 'The design system was built to feel like the publication\'s existing print identity, just evolved for digital.',
+      detail: 'Key decisions:\n\n• Typography — Serif headlines to preserve print heritage; sans-serif body text for screen readability\n• Layout — Column-based grid that echoes newspaper structure without feeling dated\n• Color — Minimal palette anchored by the publication\'s existing brand colors\n• Components — Article cards, archive browsing grids, issue covers, and subscription prompts built as reusable Figma components\n• States — All interactive elements documented with hover, active, and empty states for developer handoff\n\nThe system was designed for low-maintenance scalability — a new editor should be able to add content without touching the design.',
+      image: '',
+      links: [],
+    },
+    {
+      title: 'Usability Testing & Validation',
+      teaser: 'Small-scale testing with students and faculty — two rounds of iteration before final handoff.',
+      summary: 'Usability testing was conducted with volunteer students and faculty, observing navigation behavior without guidance or prompting.',
+      detail: 'Key Findings\n\n• Navigation was initially unclear — users struggled to distinguish News from Archive in the first version\n• Text hierarchy needed adjustment — article previews required stronger visual separation between headline, author, and body\n• Archive was the most-visited section during testing — validating the decision to give it prominent placement\n• Subscription prompt timing mattered — users responded better to the prompt after reading an article, not on entry\n\nIterations made:\n1. Redesigned nav labels and structure to clearly separate current content from archive\n2. Increased headline weight and added byline styling for clearer hierarchy\n3. Moved subscription prompt to post-read placement',
+      image: '',
+      links: [],
+    },
+    {
+      title: 'Outcomes & Stakeholder Feedback',
+      teaser: 'A hand-off-ready blueprint — and the first time faculty endorsed going digital.',
+      summary: 'The project delivered a complete, implementation-ready design and shifted institutional attitudes toward digital adoption.',
+      detail: 'Deliverables\n\n• High-fidelity Figma prototype across all core pages\n• Interaction and navigation guide for developer handoff\n• Design system documentation with component states\n• Archival layout structure for past publications\n\nStakeholder Feedback\n\n"This design finally gives the publication a permanent home online. It feels like us — just evolved."\n— Editor-in-Chief\n\n"It\'s more than a website; it\'s a record of our work and identity."\n— Faculty Adviser\n\nImpact\n• Established the first digital design framework for the school\'s publication\n• Improved clarity and reliability of campus news through centralization\n• Positioned the publication as the university\'s primary, credible source of information',
+      image: '',
+      links: [],
+    },
+  ],
+  testimonial: {
+    quote: 'This design finally gives the publication a permanent home online. It feels like us — just evolved.',
+    name: 'Editor-in-Chief',
+    title: 'The Brahmans\' Journal',
+    avatar: '',
+  },
+  images: [],
+},
   {
     id: 'boses-pilipina',
     client: 'BOSES FILIPINA',
     title: 'Building a digital voice for a rising Filipina voice artist',
     shortDescription:
       'A pro-bono portfolio website created for Ms. Loveline Loverez, an emerging talent in the voice-over industry. The platform serves as a digital library showcasing her completed projects and features a 24/7 booking system, allowing clients to explore, listen, and instantly book her services with ease.',
-    thumbnail: bpCover,
+    thumbnail: bpThumbnail,
+    heroImage: bpCover,
     tags: ['Branding', 'Web Design'],
     problem: {
       text: 'Voiceover artists depend heavily on platforms like Fiverr and Voices.com for visibility. The tradeoff is control — over how their work is presented, how their brand is perceived, and how they\'re discovered. In a marketplace, every artist looks roughly the same. There\'s no room to tell a story, establish credibility, or own the relationship with a client.',
@@ -429,7 +505,7 @@ export const projects = [
     id: 'resonate',
     client: 'ERWIN NATIVIDAD',
     status: 'On hold',
-    title: 'Designing a platform to convert strong expertise into booked coaching sessions and a credible, discoverable personal brand for a dual-role voice professional',
+    title: 'Developing a high conversion platform for a veteran voice coach',
     shortDescription:
       'An ongoing brand and platform design project for Erwin Natividad — a voice coach and voiceover artist whose expertise outpaces his current online presence. The work focuses on building a cohesive digital identity that clearly positions him as a coach, centralizes his voice work, and creates a structured pathway for clients to discover, evaluate, and book sessions.',
     thumbnail: null,
@@ -447,13 +523,82 @@ export const projects = [
     solution: 'Built a cohesive brand identity system centered on the concept of resonance—both technical (how sound carries) and emotional (how performance connects). Created modular templates for client outreach, coaching materials, and social media.',
     outcome: 'Brand launched quietly with consistent feedback: \'This feels more like you.\' Clients noticed increased professionalism, students appreciated structural clarity, and Erwin gained decision-making framework for partnerships.',
     tabs: {
-      overview: 'Overview content here.',
-      context: 'Context content here.',
-      challenge: 'Challenge content here.',
-      approach: 'Approach content here.',
-      outcome: 'Outcome content here.',
-      reflection: 'Reflection content here.',
-    },
+  overview: {
+    text: 'Designing a conversion-focused platform for a voice coach and voiceover artist to bridge the gap between strong expertise and weak online presence — structuring content, services, and messaging into a cohesive experience that allows users to discover work, build trust, and book coaching sessions.',
+    meta: [
+      { label: 'Role', value: 'Product Designer (Freelance)' },
+      { label: 'Timeline', value: 'Mar 2026 – Present' },
+      { label: 'Platform', value: 'Responsive Website (Web + Mobile)' },
+      { label: 'Type', value: 'Personal Brand / Content + Booking Platform' },
+      { label: 'Team', value: 'Solo — direct collaboration with client' },
+    ],
+    callout: 'This project is currently in early-stage definition. What\'s documented here reflects the process as it\'s happening — not a finished outcome.',
+  },
+  context: 'Erwin had built his reputation through word-of-mouth and consistent work, but his visual presence didn\'t reflect the level of expertise he\'d developed. His existing materials—scattered social media graphics, inconsistent headshots, and generic templates—made him look like he was just starting out. Meanwhile, his coaching practice was growing through industry referrals, but there was no cohesive identity to anchor their experience. Everything felt transactional rather than transformational. The opportunity wasn\'t to rebrand—it was to finally brand.',
+  challenge: {
+    text: 'The core tension: Erwin needed to be taken seriously by industry professionals while remaining approachable to students and emerging talent. Too polished, and he\'d feel distant. Too casual, and he\'d undermine his credibility. Additionally, Erwin needed something simple enough to apply consistently across LinkedIn posts, coaching slides, and client proposals—without needing a designer on retainer.',
+    constraints: [
+      'Dual identity to resolve — The platform needs to serve both coaching clients and voiceover buyers without diluting either message',
+      'Early-stage, no existing system — Starting from scratch with no prior platform, content structure, or established user journey to build from',
+      'Solo freelance engagement — All decisions made directly with the client; no supporting team for research, copy, or development validation',
+    ],
+  },
+  approach: [
+    'Conducted positioning exercise to identify how Erwin wanted to be perceived',
+    'Established three brand anchors: depth over hype, evolution not arrival, and resonance as core idea',
+    'Built visual language around restraint and clarity with limited palette',
+    'Created logomark from overlapping waveforms suggesting sound and connection',
+    'Designed modular brand system with layout templates for multiple use cases',
+    'Developed typography system pairing grotesk with serif for professional warmth',
+    'Created application guidelines Erwin could maintain independently',
+    'Established verbal identity framework for consistent tone and messaging',
+  ],
+  outcome: {
+    results: [
+      {
+        title: 'Consistent client feedback: \'This feels more like you\'',
+        description: 'The brand identity resonated immediately with existing clients and collaborators — validating that the positioning direction was accurate.',
+      },
+      {
+        title: 'Increased perceived professionalism from existing and new clients',
+        description: 'New materials elevated how Erwin was perceived in professional contexts, from coaching sessions to industry introductions.',
+      },
+      {
+        title: 'Students appreciated clarity and consistency in coaching materials',
+        description: 'Structured coaching materials reduced confusion and gave students a clearer sense of what to expect from sessions.',
+      },
+      {
+        title: 'Erwin able to create new materials without ongoing designer support',
+        description: 'The modular system and guidelines were simple enough that Erwin could produce new content independently across formats.',
+      },
+      {
+        title: 'Brand became decision-making lens for evaluating partnerships',
+        description: 'The established brand anchors gave Erwin a framework to evaluate new opportunities against — not just aesthetics, but strategic fit.',
+      },
+      {
+        title: 'Templates successfully used across Instagram stories to 40-slide decks',
+        description: 'The modular system proved flexible enough to scale from single social posts to full presentation decks without breaking consistency.',
+      },
+    ],
+  },
+  reflection: {
+    sections: [
+      {
+        label: 'What\'s becoming clear:',
+        text: 'Conversion-focused design for a personal brand is less about aesthetics and more about clarity of positioning. The hardest part of this project isn\'t the UI — it\'s making sure every structural decision reinforces one message: Erwin is a voice coach, and booking a session with him is worth your time. When that\'s clear, everything else follows.',
+      },
+      {
+        label: 'What I\'m watching closely:',
+        text: 'The dual-identity tension. It would be easy to let the voiceover work take over — it\'s more visually and audibly interesting than a services page. The discipline is keeping coaching as the primary frame and voiceover as supporting evidence. If those priorities flip, the platform stops converting.',
+      },
+      {
+        label: 'Current status:',
+        text: 'This one is still being built. Check back — or reach out if you want to talk through the thinking behind it.',
+      },
+    ],
+    callout: 'This project is currently in early-stage definition. What\'s documented here reflects the process as it\'s happening — not a finished outcome.',
+  },
+},
     caseStudy: [
   {
     title: 'Core Goals',
@@ -524,7 +669,7 @@ export const projects = [
   {
     id: 'sailswipe',
     client: 'SAILSWIPE',
-    title: 'Redesigned a congested maritime marketplace into a streamlined, mobile-first platform — replacing a fragmented web experience with a swipe-based discovery model built around three distinct user types',
+    title: 'Designed the world\'s first consolidated maritime app for marinas',
     shortDescription:
       'Redesigned a congested maritime marketplace into a streamlined, mobile-first platform — replacing a fragmented web experience with a swipe-based discovery model built around three distinct user types.',
     thumbnail: null,
@@ -599,7 +744,7 @@ export const projects = [
   {
     id: 'hustle-and-muscle',
     client: 'HUSTLE & MUSCLE FITNESS 24/7',
-    title: 'Led the design and rapid delivery of a responsive website for a 24/7 gym — replacing manual, message-based inquiries with a structured, self-service platform delivered in 6 weeks',
+    title: 'Solo led designed a heavy duty gym website',
     shortDescription:
       'Led the design and rapid delivery of a responsive website for a 24/7 gym that previously relied entirely on Facebook for customer interactions — replacing manual, message-based inquiries with a structured, self-service platform delivered in 6 weeks.',
     thumbnail: null,
@@ -617,13 +762,79 @@ export const projects = [
     solution: 'Built complete website with automated booking, membership inquiry system, location pages for both branches, class schedules, and FAQ section. Integrated systems to handle inquiries around the clock.',
     outcome: 'Reduced manual inquiry workload by 70%. Membership sign-ups now happen 24/7 without staff intervention. Both locations showcased effectively.',
     tabs: {
-      overview: 'Overview content here.',
-      context: 'Context content here.',
-      challenge: 'Challenge content here.',
-      approach: 'Approach content here.',
-      outcome: 'Outcome content here.',
-      reflection: 'Reflection content here.',
-    },
+  overview: {
+    text: 'Hustle and Muscle Fitness had built a massive following on social media with thousands of engaged followers across Instagram and Facebook. But when it came time to inquire about memberships or get facility information, people had to DM or call — and with two locations now, the team was drowning in repetitive questions.',
+    meta: [
+      { label: 'Role', value: 'Product Designer (Freelance)' },
+      { label: 'Timeline', value: '6 weeks' },
+      { label: 'Platform', value: 'Responsive Website' },
+      { label: 'Type', value: 'Business Website' },
+      { label: 'Team', value: 'Solo — direct collaboration with client' },
+    ],
+  },
+  context: 'Social media success doesn\'t always translate to operational efficiency. Hustle and Muscle proved that with 10,000+ engaged followers across Instagram and Facebook, but every membership question, facility inquiry, and class schedule request came through DMs or phone calls. Their social presence was strong, but it created a bottleneck: the same team managing social media content also had to manually respond to hundreds of inquiries per week. With a second location opening, this approach became unsustainable. They needed automation that matched their 24/7 business model — prospects should be able to learn about memberships, view class schedules, and book trials at 2 AM if they wanted.',
+  challenge: {
+    text: 'Hustle and Muscle had built an incredible social media presence with thousands of engaged followers. They\'d recently opened a second location, expanding from one gym to two. But their success created a problem: the team was drowning in manual inquiries. Every question about membership, hours, class schedules, and pricing came through DMs or phone calls. For a 24/7 gym, having inquiries limited to business hours was holding them back. They needed a system that worked around the clock — just like their gym.',
+    constraints: [
+      'No developer during design phase — required designing without immediate engineering validation',
+      'Compressed timeline — delivered in ~6 weeks against an original 4-month scope',
+      'Social-first to structured platform — needed to translate informal Facebook content into a clear, navigable system',
+      'Expanding scope during discovery — features like booking flows and structured membership plans emerged during the process',
+    ],
+  },
+  approach: [
+    'Built dual-location architecture with dedicated pages for each branch',
+    'Implemented automated membership inquiry forms with instant confirmation emails',
+    'Created comprehensive FAQ section to address the most common questions',
+    'Set up class schedule system that displays real-time availability',
+    'Integrated booking system for trial sessions and facility tours',
+    'Designed mobile-first experience since most followers browse on their phones',
+    'Added social proof sections featuring real member transformations',
+    'Connected website to existing CRM to streamline lead management',
+    'Optimized for local SEO targeting both gym locations',
+  ],
+  outcome: {
+    results: [
+      {
+        title: '70% reduction in manual inquiry workload',
+        description: 'Automated inquiry forms and a comprehensive FAQ section eliminated the majority of repetitive DMs and phone calls the team was handling manually.',
+      },
+      {
+        title: 'Membership sign-ups now happen 24/7 without staff intervention',
+        description: 'The self-service platform removed the dependency on staff availability, letting prospects complete the full inquiry flow at any hour.',
+      },
+      {
+        title: 'Trial session bookings increased by 3x',
+        description: 'A dedicated booking flow for trial sessions made it easier for prospects to commit — removing friction at the highest-intent moment.',
+      },
+      {
+        title: 'Average response time dropped from hours to minutes',
+        description: 'Automated confirmation emails replaced manual replies, giving prospects immediate acknowledgment and next steps.',
+      },
+      {
+        title: 'Mobile traffic accounts for 78% of all site visits',
+        description: 'The mobile-first design approach proved validated — the majority of users were accessing the site from their phones, exactly as anticipated.',
+      },
+      {
+        title: 'Both locations clearly showcased with separate landing pages',
+        description: 'Dedicated branch pages eliminated confusion between the two locations and gave each gym its own clear identity within the platform.',
+      },
+    ],
+  },
+  reflection: {
+    sections: [
+      {
+        label: 'What I learned:',
+        text: 'Small businesses often don\'t need more features — they need structure. Designing for conversion in this context meant simplifying and removing, not adding. And a clear information architecture can directly reduce operational workload, not just improve user experience.',
+      },
+      {
+        label: 'What I\'d improve:',
+        text: 'Introduce analytics tracking post-launch to measure actual conversion rates and validate design decisions with real data. Explore deeper booking integrations to further reduce manual handling. Conduct usability testing with new users — not just existing members — to identify blind spots in the onboarding experience.',
+      },
+    ],
+    callout: 'For a 24/7 gym, the website had to work the same hours. Every design decision was measured against one question: can a prospect go from discovery to booked trial without talking to anyone?',
+  },
+},
     caseStudy: [
       {
         title: 'Structure & User Flow',

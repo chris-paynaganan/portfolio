@@ -1,6 +1,6 @@
 import styles from './ChallengeTab.module.css'
 
-function ChallengeTab({ text, constraints }) {
+function ChallengeTab({ text, constraints, hmw }) {
   return (
     <div className={styles.wrap}>
       <h2 className={styles.title}>The Challenge</h2>
@@ -13,6 +13,24 @@ function ChallengeTab({ text, constraints }) {
             {constraints.map((item, i) => (
               <div key={i} className={styles.constraintItem}>
                 <p className={styles.constraintText}>{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {hmw && hmw.length > 0 && (
+        <div className={styles.hmwWrap}>
+          <h3 className={styles.constraintsLabel}>How Might We</h3>
+          <div className={styles.hmwTable}>
+            <div className={styles.hmwHeader}>
+              <span className={styles.hmwHeaderCell}>Challenge</span>
+              <span className={styles.hmwHeaderCell}>How Might We</span>
+            </div>
+            {hmw.map((row, i) => (
+              <div key={i} className={styles.hmwRow}>
+                <p className={styles.hmwCell}>{row.challenge}</p>
+                <p className={styles.hmwCell}>{row.solution}</p>
               </div>
             ))}
           </div>

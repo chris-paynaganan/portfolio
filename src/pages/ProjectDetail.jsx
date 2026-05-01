@@ -103,9 +103,9 @@ function ProjectDetail() {
       <section className={styles.heroImage}>
         <div className="container">
           <div className={styles.imagePlaceholder}>
-            {project.thumbnail && (
-              <img src={project.thumbnail} alt={project.title} />
-            )}
+            {(project.heroImage || project.thumbnail) && (
+  <img src={project.heroImage || project.thumbnail} alt={project.title} />
+)}
           </div>
         </div>
       </section>
